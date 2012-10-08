@@ -1,0 +1,8 @@
+*.classpath
+*.project
+META-INF
+*.jar
+*.war
+*.ear
+*.class
+*.bat
