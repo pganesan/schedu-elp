@@ -2,7 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<c:url var="mouse" value="../images/food_mouse.jpg" />
 <form action="" method="get" id="home" name="home" target="_blank">
 	<h3>Welcome to Schedu-elp - Your Online Academic Planner.</h3>
 	<br />
@@ -35,7 +34,6 @@
 		<br /> <br />
 		<h3>Phasellus orci. Etiam tempor elit auctor magna.</h3>
 		<br />
-		<h4 style="color: #668b1b;">Aenean condimentum diam et turpis.</h4>
+		<h4 class="subheading">Aenean condimentum diam et turpis.</h4>
 	</div>
-	<img src="${mouse}" alt="food" height="250px" width="297px" />
 </form>

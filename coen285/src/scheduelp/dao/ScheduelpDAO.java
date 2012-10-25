@@ -25,21 +25,21 @@ public class ScheduelpDAO {
 		this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
 	}
 
-	public Student getStudentRecord(String userName, String pwd) {
-		Student member = null;
+	public Student getStudentRecord(String userID, String pwd) {
+		Student student = null;
 
-		String sql = "SELECT user_id, first_name, middle_name, last_name FROM member " + 
-				"WHERE user_id=:userName AND user_password=:pwd";
+		String sql = "SELECT student_id, first_name, middle_name, last_name, degree, major FROM student " + 
+				"WHERE student_id=:userID AND student_pwd=:pwd";
 		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("userName", userName);
+		parameters.put("userID", userID);
 		parameters.put("pwd", pwd);
 		try {
-			member = jdbcTemplate.queryForObject(sql, parameters, new StudentMapper());
+			student = jdbcTemplate.queryForObject(sql, parameters, new StudentMapper());
 		} catch (EmptyResultDataAccessException dae) {
 			// return null
 		}
 
-		return member;
+		return student;
 	}
 
 	// sample insert

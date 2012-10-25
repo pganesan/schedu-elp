@@ -12,13 +12,15 @@ public class StudentMapper implements RowMapper<Student> {
 
 	@Override
 	public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Student member = new Student();
-		member.setUserId(rs.getString("user_id"));
-		member.setFirstName(rs.getString("first_name"));
-		member.setMiddleName(rs.getString("middle_name"));
-		member.setLastName(rs.getString("last_name"));
-
-		return member;
+		Student student = new Student();
+		student.setStudentID(rs.getString("student_id"));
+		student.setFirstName(rs.getString("first_name"));
+		student.setMiddleName(rs.getString("middle_name"));
+		student.setLastName(rs.getString("last_name"));
+		student.setDegree(rs.getString("degree"));
+		student.setMajor(rs.getString("major"));
+		
+		return student;
 	}
 
 }

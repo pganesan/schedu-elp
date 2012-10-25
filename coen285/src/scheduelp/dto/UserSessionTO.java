@@ -4,7 +4,7 @@ import scheduelp.model.Student;
 
 public class UserSessionTO {
 
-	private String userName;
+	private String userID;
 
 	private String userPwd;
 
@@ -14,20 +14,24 @@ public class UserSessionTO {
 
 	private String lastName;
 
-	public String getUserName() {
-		return userName;
+	private String degree;
+
+	private String major;
+
+	public String getUserID() {
+		return userID;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 
 	public String getUserPwd() {
 		return userPwd;
+	}
+
+	public void setUserPwd(String userPwd) {
+		this.userPwd = userPwd;
 	}
 
 	public String getFirstName() {
@@ -54,15 +58,32 @@ public class UserSessionTO {
 		this.lastName = lastName;
 	}
 
-	public static UserSessionTO createUser(Student member) {
-		UserSessionTO user = new UserSessionTO();
-
-		user.setUserName(member.getUserId());
-		user.setFirstName(member.getFirstName());
-		user.setMiddleName(member.getMiddleName());
-		user.setLastName(member.getLastName());
-
-		return user;
+	public String getDegree() {
+		return degree;
 	}
 
+	public void setDegree(String degree) {
+		this.degree = degree;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+	public static UserSessionTO createUser(Student student) {
+		UserSessionTO user = new UserSessionTO();
+
+		user.setUserID(student.getStudentID());
+		user.setFirstName(student.getFirstName());
+		user.setMiddleName(student.getMiddleName());
+		user.setLastName(student.getLastName());
+		user.setDegree(student.getDegree());
+		user.setMajor(student.getMajor());
+		
+		return user;
+	}
 }

@@ -6,10 +6,10 @@
 <form:form modelAttribute="userDetail" action="${submitURL}" method="get" id="logout" name="logout">
 	<br />
 	<p>
-		Hello <span style="font-size:11pt;font-weight:bold;color:#3fa12b">
+		Hello <span class="subheading">
 		<c:out value="${userDetail.firstName} ${userDetail.middleName} ${userDetail.lastName}"></c:out>		
 		</span>
-		<br /> Welcome to Schedu-elp!
+		<br /> <br /> Welcome to <span class="subheading">Schedu-elp</span>, your Academic Planner!
 	</p>
 	<br/>
 	<hr/>

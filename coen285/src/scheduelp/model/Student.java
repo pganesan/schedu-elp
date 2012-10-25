@@ -6,9 +6,9 @@ public class Student implements Serializable {
 
 	private static final long serialVersionUID = -9175281480564523747L;
 
-	private String userId;
+	private String studentID;
 
-	private String userPwd;
+	private String studentPwd;
 
 	private String firstName;
 
@@ -28,30 +28,24 @@ public class Student implements Serializable {
 
 	private String email;
 
-	private String ccNumber;
+	private String degree;
 
-	private String cardType;
+	private String major;
 
-	private Integer ccExpiryYear;
-
-	private Integer ccExpiryMonth;
-
-	private String ccHolderName;
-
-	public String getUserId() {
-		return userId;
+	public String getStudentID() {
+		return studentID;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setStudentID(String studentID) {
+		this.studentID = studentID;
 	}
 
-	public String getUserPwd() {
-		return userPwd;
+	public String getStudentPwd() {
+		return studentPwd;
 	}
 
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
+	public void setStudentPwd(String studentPwd) {
+		this.studentPwd = studentPwd;
 	}
 
 	public String getFirstName() {
@@ -82,8 +76,8 @@ public class Student implements Serializable {
 		return streetAddress;
 	}
 
-	public void setStreetAddress(String streetAddr) {
-		this.streetAddress = streetAddr;
+	public void setStreetAddress(String streetAddress) {
+		this.streetAddress = streetAddress;
 	}
 
 	public String getCity() {
@@ -126,44 +120,20 @@ public class Student implements Serializable {
 		this.email = email;
 	}
 
-	public String getCcNumber() {
-		return ccNumber;
+	public String getDegree() {
+		return degree;
 	}
 
-	public void setCcNumber(String ccNumber) {
-		this.ccNumber = ccNumber;
+	public void setDegree(String degree) {
+		this.degree = degree;
 	}
 
-	public String getCardType() {
-		return cardType;
+	public String getMajor() {
+		return major;
 	}
 
-	public void setCardType(String cardType) {
-		this.cardType = cardType;
-	}
-
-	public Integer getCcExpiryYear() {
-		return ccExpiryYear;
-	}
-
-	public void setCcExpiryYear(Integer ccExpiryYear) {
-		this.ccExpiryYear = ccExpiryYear;
-	}
-
-	public Integer getCcExpiryMonth() {
-		return ccExpiryMonth;
-	}
-
-	public void setCcExpiryMonth(Integer ccExpiryMonth) {
-		this.ccExpiryMonth = ccExpiryMonth;
-	}
-
-	public String getCcHolderName() {
-		return ccHolderName;
-	}
-
-	public void setCcHolderName(String ccHolderName) {
-		this.ccHolderName = ccHolderName;
+	public void setMajor(String major) {
+		this.major = major;
 	}
 
 }

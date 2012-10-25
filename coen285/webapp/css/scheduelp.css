@@ -123,9 +123,9 @@ div.homeBox {
 /** styles for sign in, member registration pages **/
 #loginbox {
 	position: absolute;
-	right: 3%;
-	width: 240px;
-	height: 200px;
+	right: 5%;
+	width: 220px;
+	height: 180px;
 	border: 1px solid #93191b;
 	z-index: 2;
 	padding: 10px;

@@ -8,9 +8,9 @@
 			<span class="ui-icon ui-icon-alert"></span>
 			<span></span>
 		</p>
-	<label for="userName">Username</label>
+	<label for="userName">eCampus ID</label>
 	<br />
-	<form:input id="userName" path="userName" size="20" maxlength="20"/>	
+	<form:input id="userID" path="userID" size="20" maxlength="20"/>	
 	<br />
 	<br />
 	<label for="userPwd">Password</label>
@@ -19,5 +19,4 @@
 	<br />
 	<br />
 	<input type="submit" value="Sign in" id="loginButton" name="loginButton" />
-	&nbsp;&nbsp;&nbsp; <button id="newuser"><span class="ui-icon ui-icon-person"></span>New user?</button>
 </form:form>

@@ -17,10 +17,9 @@
 		<script src="../js/utility.js" type="text/javascript"></script>
 	</head>
 	<c:url var="home" value="/view/home" />
-	<c:url var="makeReserve" value="/view/reserve/search" />
-	<c:url var="myReserve" value="/view/reserve/viewall" />
-	<c:url var="restReview" value="/view/review/search" />
-	<c:url var="orderTogo" value="/view/togo/search" />
+	<c:url var="courseSearch" value="/view/search" />
+	<c:url var="myProgram" value="/view/program" />
+	<c:url var="faq" value="/view/faq" />
 	<body>
 		<div id="header">
 			<table summary="header" width="100%">
@@ -35,7 +34,6 @@
 			</table>
 		</div>
 		<div id="loginbox" class="ui-widget-content ui-corner-all"></div>
-		<div id="registerDialog" title="Member Registration"></div>
 		<div id="newReviewDialog" title="Write a Review"></div>
 		<div class="scheduelpInfo" title=""></div>
 		<div id="content">
@@ -45,16 +43,13 @@
 						<a href="${home}">Home</a>
 					</li>
 					<li>
-						<a href="${makeReserve}">Course Search</a>
+						<a href="${home}">Course Search</a>
 					</li>
 					<li>
-						<a href="${myReserve}">Course Reviews</a>
-					</li>					
-					<li>
-						<a href="${orderTogo}">My Program of Study</a>
+						<a href="${home}">My Program of Study</a>
 					</li>	
 					<li>
-						<a href="${restReview}">Help</a>
+						<a href="${home}">FAQ</a>
 					</li>					
 				</ul>
 			</div>

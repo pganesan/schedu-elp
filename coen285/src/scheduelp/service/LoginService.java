@@ -18,13 +18,13 @@ public class LoginService {
 
 	@Transactional
 	public UserSessionTO login(UserSessionTO credentials) throws ScheduelpException {
-		Student member = scheduelpDAO.getStudentRecord(credentials.getUserName(),
+		Student student = scheduelpDAO.getStudentRecord(credentials.getUserID(),
 				credentials.getUserPwd());
-		if (member == null) {
+		if (student == null) {
 			throw new ScheduelpException("Username/password is incorrect");
 		}
 
-		UserSessionTO userTO = UserSessionTO.createUser(member);
+		UserSessionTO userTO = UserSessionTO.createUser(student);
 		return userTO;
 	}
 

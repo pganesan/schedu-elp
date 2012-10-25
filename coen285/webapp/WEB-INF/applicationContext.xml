@@ -24,7 +24,7 @@
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 				destroy-method="close"
 				p:driverClass="com.mysql.jdbc.Driver"
-				p:jdbcUrl="jdbc:mysql://localhost/listaurantdb"
+				p:jdbcUrl="jdbc:mysql://localhost/scheduelpdb"
 				p:user="root"
 				p:password="password"
 				p:acquireIncrement="5"

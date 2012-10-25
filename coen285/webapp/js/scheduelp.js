@@ -45,12 +45,6 @@ $(function() {
 		// prevent default submit
 		return false;
 	});
-	// new user registration
-	$("#newuser").live("click", function() {
-		$("#registerDialog").load("/scheduelp/view/newuser");
-		$("#registerDialog").dialog("open");
-		return false;
-	});
 
 	// searchrestaurant.jsp
 	$("#srchRestForm").live("submit", function() {
@@ -440,9 +434,8 @@ function startup() {
 		}
 	});
 	// show signin dialog on startup
-	$("#loginbox").load("/scheduelp/view/showlogin", function() {
-		$("#loginButton, #newuser").button();
-	});
+	$("#loginbox").load("/scheduelp/view/showlogin");
+	
 	// submit signin
 	$("#signin").click(function() {
 		$("#loginbox").slideToggle("medium");
@@ -461,40 +454,7 @@ function startup() {
 			}
 		}
 	});
-	// registration dialog
-	$("#registerDialog").dialog({
-		autoOpen : false,
-		height : 500,
-		width : 1000,
-		modal : true,
-		buttons : {
-			"Create account" : function() {
-				// create an AJAX call
-				$.ajax({
-					// validate form before ajax call;
-					beforeSend : function() {
-						// if this returns false, the ajax call will not be made
-						return validateRegistration($("#registerError"));
-					},
-					data : $("#registerForm").serialize(),
-					type : $("#registerForm").attr("method"),
-					url : $("#registerForm").attr("action"),
-					success : function(response) {
-						$("#registerDialog").dialog("close");
-						$(".scheduelpInfo").html(response);
-						$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Registration");
-						$(".scheduelpInfo").dialog("open");
-					},
-					error : function(xhr, status, error) {
-						showError($("#registerError"), xhr.responseText);
-					}
-				});
-			},
-			Cancel : function() {
-				$(this).dialog("close");
-			}
-		}
-	});
+
 	// new review dialog
 	$("#newReviewDialog").dialog({
 		autoOpen : false,
@@ -543,78 +503,12 @@ function init() {
 // validate signin
 function validateLogin() {
 	// if this returns false, the ajax call will not be made
-	if (isEmpty($("#userName"))) {
-		showError($("#loginError"), "Username is required");
+	if (isEmpty($("#userID"))) {
+		showError($("#loginError"), "Please enter your eCampus User ID");
 		return false;
 	} else if (isEmpty($("#userPwd"))) {
-		showError($("#loginError"), "Password is required");
+		showError($("#loginError"), "Please enter your eCampus Password");
 		return false;
-	}
-}
-
-// validate fields in registration form
-function validateRegistration(errorObj) {
-	// if this returns false, the ajax call will not be made
-	if (isEmpty($("#firstName"))) {
-		showError(errorObj, "First Name is required");
-		return false;
-	}
-	if (isEmpty($("#lastName"))) {
-		showError(errorObj, "Last Name is required");
-		return false;
-	}
-	if (isEmpty($("#streetAddress"))) {
-		showError(errorObj, "Street Address is required");
-		return false;
-	}
-	if (isEmpty($("#city"))) {
-		showError(errorObj, "City is required");
-		return false;
-	}
-	if (isEmpty($("#state"))) {
-		showError(errorObj, "State is required");
-		return false;
-	}
-	if (isEmpty($("#zip"))) {
-		showError(errorObj, "Zip code is required");
-		return false;
-	}
-	if (isEmpty($("#email"))) {
-		showError(errorObj, "Email address is required");
-		return false;
-	}
-	if (isEmpty($("#registerForm #userId"))) {
-		showError(errorObj, "Please provide a username for your account");
-		return false;
-	}
-	if (isEmpty($("#registerForm #userPwd"))) {
-		showError(errorObj, "Please provide a password for your account");
-		return false;
-	}
-	if (!checkZipCode($("#zip"))) {
-		showError(errorObj, "Zip code must contain only 5 digits");
-		return false;
-	}
-	if (!checkEmail($("#email"))) {
-		showError(errorObj, "Email address is invalid");
-		return false;
-	}
-	if (($("#phone").val() != "") && (!checkPhone($("#phone")))) {
-		showError(errorObj, "Phone number is invalid. Please use the format specified");
-		return false;
-	}
-	if (!checkSpecialChars($("#userId"))) {
-		showError(errorObj, "User Name must start with an alphabet and can be followed by only alphabets, numbers or underscore");
-		return false;
-	}
-	if ($("#ccNumber").val() != "") {
-		if (!checkCardNumber($("#ccNumber"))) {
-			showError(errorObj, "Card Number is invalid. Please use the format specified");
-			return false;
-		} else if (isEmpty($("#ccHolderName"))) {
-			showError(errorObj, "Card Holder's full name is required");
-			return false;
-		}
 	}
 }
 
@@ -680,7 +574,6 @@ function validateNewReview() {
 		return false;
 	}
 }
-
 
 // validate restaurant search for togo order
 function validateSrchTogo(errorObj) {

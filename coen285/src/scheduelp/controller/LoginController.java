@@ -23,13 +23,14 @@ public class LoginController extends BaseController {
 
 	@RequestMapping(value = "/showlogin", method = RequestMethod.GET)
 	public String getLogin(Model model, SessionStatus status) throws ScheduelpException {
+		// clear any previous session
 		status.setComplete();
 		model.addAttribute("userTo", new UserSessionTO());
 		return "login";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String submitLogin(@ModelAttribute("memberAccount") UserSessionTO credentials, Model model)
+	public String submitLogin(@ModelAttribute("userTo") UserSessionTO credentials, Model model)
 			throws ScheduelpException {
 		UserSessionTO userDetailTO = loginService.login(credentials);
 
