@@ -30,8 +30,6 @@ public class Student implements Serializable {
 
 	private String degree;
 
-	private String major;
-
 	public String getStudentID() {
 		return studentID;
 	}
@@ -127,13 +125,4 @@ public class Student implements Serializable {
 	public void setDegree(String degree) {
 		this.degree = degree;
 	}
-
-	public String getMajor() {
-		return major;
-	}
-
-	public void setMajor(String major) {
-		this.major = major;
-	}
-
 }

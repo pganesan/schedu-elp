@@ -16,8 +16,6 @@ public class UserSessionTO {
 
 	private String degree;
 
-	private String major;
-
 	public String getUserID() {
 		return userID;
 	}
@@ -66,14 +64,6 @@ public class UserSessionTO {
 		this.degree = degree;
 	}
 
-	public String getMajor() {
-		return major;
-	}
-
-	public void setMajor(String major) {
-		this.major = major;
-	}
-
 	public static UserSessionTO createUser(Student student) {
 		UserSessionTO user = new UserSessionTO();
 
@@ -82,7 +72,6 @@ public class UserSessionTO {
 		user.setMiddleName(student.getMiddleName());
 		user.setLastName(student.getLastName());
 		user.setDegree(student.getDegree());
-		user.setMajor(student.getMajor());
 		
 		return user;
 	}
