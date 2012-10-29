@@ -44,9 +44,6 @@
 						<span class="ui-icon ui-icon-search"></span>Search
 					</button></td>
 			</tr>
-			<tr><td>&nbsp;</td></tr>
-			<tr><td>&nbsp;</td></tr>
-			<tr><td>&nbsp;</td></tr>
 		</table>
 	</div>
 	<c:if test="${!empty courseList}">
@@ -67,7 +64,7 @@
 						<td width="35%">${rs.courseName}&nbsp;(${rs.units} units)<br /> 
 							<span class="subheading">PREREQS: </span> 
 							<c:forEach items="${rs.prerequisites}" var="pre">
-								${pre}&nbsp;
+								${pre}&nbsp;&nbsp;
 							</c:forEach></td>
 						<td width="30%">
 							<c:forEach items="${rs.schedules}" var="sch">

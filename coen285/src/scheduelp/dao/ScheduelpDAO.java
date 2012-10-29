@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -100,14 +101,20 @@ public class ScheduelpDAO {
 	public List<Review> getReviews(String courseCode) {
 		String sql = "SELECT review_id, course_code, s.first_name, rating, comments "
 				+ ", date_format(review_datetime,'%m/%d/%Y %h:%i %p') AS review_datetime "
-				+ "FROM course_review r "
-				+ "JOIN student s ON r.student_id = s.student_id "
-				+ "WHERE r.course_code = :courseCode "
-				+ "ORDER BY r.review_datetime DESC";
+				+ "FROM course_review r " + "JOIN student s ON r.student_id = s.student_id "
+				+ "WHERE r.course_code = :courseCode " + "ORDER BY r.review_datetime DESC";
 
 		SqlParameterSource parameters = new MapSqlParameterSource("courseCode", courseCode);
 
 		return jdbcTemplate.query(sql, parameters, new ReviewMapper());
+	}
+
+	public void insertReview(Review review) {
+		String sql = "INSERT INTO course_review(course_code,student_id,rating,comments,review_datetime) "
+				+ "VALUES(:course,:student,:rating,:comments,now())";
+
+		SqlParameterSource parameters = new BeanPropertySqlParameterSource(review);
+		jdbcTemplate.update(sql, parameters);
 	}
 
 	// sample insert

@@ -86,6 +86,31 @@ $(function() {
 		// prevent default submit
 		return false;
 	});
+	
+	// write new review
+	$("#viewReviewForm").live("submit", function() {
+		var cid = $("#viewReviewForm #courseId").val();
+		$.ajax({
+			data : {
+				cid : cid,
+			},
+			type : $(this).attr("method"),
+			url : $(this).attr("action"),
+			success : function(response) {
+				// new review dialog
+				$("#newReviewDialog").html(response);								
+				$("#newReviewDialog").dialog("open");											
+			},
+			error : function(xhr, status, error) {
+				$(".scheduelpInfo").html(xhr.responseText);
+				$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Write a Review");
+				$(".scheduelpInfo").dialog("open");
+			}			
+		});
+
+		// prevent default submit
+		return false;
+	});	
 
 });
 
@@ -181,58 +206,12 @@ function validateLogin() {
 	}
 }
 
-// validate restaurant search for reservation
+// validate course search
 function validateSrchCourse(errorObj) {
 	var checked = $('#srchCourseForm input[type="checkbox"]').is(':checked');
 	if ((!checked) && (isEmpty($("#srchCourseForm #startTime")) || isEmpty($("#srchCourseForm #endTime")))
 		&& isEmpty($("#srchCourseForm #courseCode")) && isEmpty($("#srchCourseForm #courseName"))) {
 		showError(errorObj, "Please enter a search criteria to search for courses");
-		return false;
-	}
-}
-
-// validate reservation form (new)
-function validateReserve() {
-	if (isEmpty($("#reserveDate"))) {
-		showError($("#reserveError"), "Please pick a reservation date");
-		return false;
-	}
-	if (isEmpty($("#reserveTime"))) {
-		showError($("#reserveError"), "Please pick a reservation time");
-		return false;
-	}
-
-	var resDateTime = new Date($("#reserveDate").val().concat(" ").concat($("#reserveTime").val()));
-	var minDateTime = new Date().getTime() + (2 * 60 * 60 * 1000);
-	if (resDateTime.getTime() < minDateTime) {
-		showError($("#reserveError"), "Reservations can only be made starting 2 hours from now");
-		return false;
-	}
-}
-
-// validate reservation form (edit)
-function validateRsvEdit() {
-	if (isEmpty($("#rsvDate"))) {
-		showError($("#rsvEditError"), "Please pick a reservation date");
-		return false;
-	}
-	if (isEmpty($("#rsvTime"))) {
-		showError($("#rsvEditError"), "Please pick a reservation time");
-		return false;
-	}
-
-	var resDateTime = new Date($("#rsvDate").val().concat(" ").concat($("#rsvTime").val()));
-	var minDateTime = new Date().getTime() + (2 * 60 * 60 * 1000);
-	if (resDateTime.getTime() < minDateTime) {
-		showError($("#rsvEditError"), "Reservations can only be made starting 2 hours from now");
-		return false;
-	}
-}
-
-// validate restaurant search for reviews
-function validateReviewRest(errorObj) {
-	if (isEmpty($("#srchReviewForm #restName")) && checkValue($("#srchReviewForm #cuisine"), "0") && isEmpty($("#srchReviewForm #near"))) {
-		showError(errorObj, "Please enter a search criteria to find restaurants");
 		return false;
 	}
 }
@@ -244,34 +223,8 @@ function validateNewReview() {
 		showError($("#newReviewError"), "Please choose a rating");
 		return false;
 	}
-}
-
-// validate restaurant search for togo order
-function validateSrchTogo(errorObj) {
-	if (isEmpty($("#srchTogoForm #restName")) && checkValue($("#srchTogoForm #cuisine"), "0") && isEmpty($("#srchTogoForm #near"))) {
-		showError(errorObj, "Please enter a search criteria to find restaurants");
+	if (isEmpty($("#newReviewForm #comments"))) {
+		showError($("#newReviewError"), "Please enter review comments");
 		return false;
 	}
 }
-
-// validate togo order form
-function validateTogoOrder() {
-	var checked = $('#viewmenuForm input[type="checkbox"]').is(':checked');
-	if (!checked) {
-		showError($("#viewmenuError"), "You must choose atleast one item to complete the order");
-		return false;
-	}
-}
-
-// validate togo order confirmation form
-function validateConfirmOrder() {
-	if (isEmpty($("#cNumber"))) {
-		showError($("#orderError"), "Please enter credit card number to process your order");
-		return false;
-	}
-	if (isEmpty($("#cName"))) {
-		showError($("#orderError"), "Please enter credit card holder's name to process your order");
-		return false;
-	}
-}
-

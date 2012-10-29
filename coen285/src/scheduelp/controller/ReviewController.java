@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import scheduelp.common.ScheduelpException;
 import scheduelp.dto.CourseDetailTO;
+import scheduelp.dto.UserSessionTO;
+import scheduelp.model.Review;
 import scheduelp.service.ReviewService;
 
 @Controller
@@ -29,12 +32,12 @@ public class ReviewController extends BaseController {
 		return "viewreview";
 	}
 
-	/*
-	@RequestMapping(value = "/review/new", method = RequestMethod.POST)
+	
+	@RequestMapping(value = "/review/new", method = RequestMethod.GET)
 	public String getNewReview(@ModelAttribute("userDetail") UserSessionTO userDetail,
 			@RequestParam("cid") String courseCode, Model model) throws ScheduelpException {
-		ReviewDetailTO dto = new ReviewDetailTO();
-		dto.setRestaurantId(restaurantId);
+		Review dto = new Review();
+		dto.setCourse(courseCode);
 
 		model.addAttribute("reviewDetailTo", dto);
 		return "newreview";
@@ -42,13 +45,13 @@ public class ReviewController extends BaseController {
 
 	@RequestMapping(value = "/review/new/submit", method = RequestMethod.POST)
 	public String submitNewReview(@ModelAttribute("userDetail") UserSessionTO userDetail,
-			@ModelAttribute("reviewDetailTo") ReviewDetailTO reviewDetailTo, Model model)
+			@ModelAttribute("reviewDetailTo") Review review, Model model)
 			throws ScheduelpException {
-		reviewDetailTo.setUserId(userDetail.getUserID());
-		reviewService.postReview(reviewDetailTo);
-		String restaurantId = Integer.toString(reviewDetailTo.getRestaurantId());
+		review.setStudent(userDetail.getUserID());
+		reviewService.postReview(review);
+		String courseCode = review.getCourse();
 
-		return "redirect:/list/review/list?cid=".concat(restaurantId);
+		return "redirect:/view/review/list?cid=".concat(courseCode);
 	}
-	*/
+	
 }

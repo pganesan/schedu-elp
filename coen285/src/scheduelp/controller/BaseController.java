@@ -23,6 +23,6 @@ public class BaseController {
 	public @ResponseBody
 	String handleException(HttpSessionRequiredException le, HttpServletResponse response) {
 		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-		return "Please log in to plan your program of study.";
+		return "Please sign in into Schedu-elp using your eCampus ID and password";
 	}
 }
