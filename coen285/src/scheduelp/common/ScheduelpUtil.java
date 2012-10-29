@@ -22,4 +22,15 @@ public class ScheduelpUtil {
 
 		return isNull;
 	}
+	
+	public static String join(String[] strAry, String delimiter) {
+		String ans = "";
+		if (strAry != null) {
+			for (String s : strAry) {
+				ans = ans.concat(s).concat(delimiter);
+			}
+		}
+		
+		return ((ans.length() > 1)?ans.substring(0, ans.length()-1):ans);
+	}
 }

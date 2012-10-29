@@ -43,7 +43,7 @@
 						<a href="${home}">Home</a>
 					</li>
 					<li>
-						<a href="${home}">Course Search</a>
+						<a href="${courseSearch}">Course Search</a>
 					</li>
 					<li>
 						<a href="${home}">My Program of Study</a>

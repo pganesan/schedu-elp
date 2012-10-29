@@ -1,7 +1,6 @@
 package scheduelp.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Course implements Serializable {
 
@@ -15,7 +14,9 @@ public class Course implements Serializable {
 
 	private Integer units;
 
-	private List<String> prerequisites;
+	private String prerequisite;
+
+	private CourseSchedule schedule;
 
 	public String getCourseCode() {
 		return courseCode;
@@ -49,12 +50,37 @@ public class Course implements Serializable {
 		this.units = units;
 	}
 
-	public List<String> getPrerequisites() {
-		return prerequisites;
+	public String getPrerequisite() {
+		return prerequisite;
 	}
 
-	public void setPrerequisites(List<String> prerequisites) {
-		this.prerequisites = prerequisites;
+	public void setPrerequisite(String prerequisite) {
+		this.prerequisite = prerequisite;
+	}
+
+	public CourseSchedule getSchedule() {
+		return schedule;
+	}
+
+	public void setSchedule(CourseSchedule schedule) {
+		this.schedule = schedule;
+	}
+
+	@Override
+	public int hashCode() {
+		return courseCode.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean eq = false;
+
+		if (obj instanceof Course) {
+			if (courseCode.equalsIgnoreCase(((Course) obj).getCourseCode())) {
+				eq = true;
+			}
+		}
+		return eq;
 	}
 
 }

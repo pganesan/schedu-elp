@@ -84,8 +84,8 @@ p.ui-state-highlight {
 }
 
 #menu {
-/*	width: 75%;*/
-/*	margin: 3px auto;*/
+	/*	width: 75%;*/
+	/*	margin: 3px auto;*/
 	height: 97%;
 	overflow: auto;
 }
@@ -120,7 +120,7 @@ div.homeBox {
 	float: left;
 }
 
-/** styles for sign in, member registration pages **/
+/** styles for sign in page**/
 #loginbox {
 	position: absolute;
 	right: 5%;
@@ -138,31 +138,19 @@ legend {
 }
 
 /** styles for reservation pages **/
-.reserveLink {
-	color: #668b18 !important;
-}
-
-.reserveLink:hover {
-	font-weight: bold;
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-/** styles for togo order pages **/
-div#orderSheet {
-	float:left;
+#leftDiv {
 	width: 30%;
-	margin-right: 10px;
+	float: left;
 	padding: 10px;
 }
 
-div#orderSheet h3 {
+#rightDiv {
+	width: 66%;
+	padding: 10px;
+	float: right;
+}
+
+#leftDiv > h3 {
 	padding: 5px;
 	text-align: center;
 }
-
-.priceTD, #subtotal, #tax, #total {
-	text-align: right;
-}
-
-

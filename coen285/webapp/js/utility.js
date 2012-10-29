@@ -2,7 +2,6 @@
 function isEmpty(obj) {
 	if(obj.val() == "") {
 		obj.addClass("ui-state-error");
-		obj.focus();
 		return true;
 	} else {
 		obj.removeClass("ui-state-error");
