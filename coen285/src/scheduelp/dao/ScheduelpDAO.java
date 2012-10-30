@@ -117,6 +117,21 @@ public class ScheduelpDAO {
 		jdbcTemplate.update(sql, parameters);
 	}
 
+	public void addCourseToProgram(String userID, String degree, String courseCode) {
+		String sql = "INSERT INTO program_of_study(student_id, course_code, special_requirement) "
+				+ "VALUES (:studentID,:courseCode, "
+				+ "(SELECT requirement_id FROM special_requirement "
+				+ "WHERE course_code=:courseCode AND (degree=:degree OR degree IS NULL)))";
+
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("studentID", userID);
+		paramMap.put("courseCode", courseCode);
+		paramMap.put("degree", degree);
+		
+		SqlParameterSource parameters = new MapSqlParameterSource(paramMap);
+		jdbcTemplate.update(sql, parameters);
+	}
+
 	// sample insert
 	/*
 	 * public Integer insertReservation(Reservation reservation) { String sql =

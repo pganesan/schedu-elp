@@ -111,6 +111,39 @@ $(function() {
 		// prevent default submit
 		return false;
 	});	
+	
+	// show all reviews for selected course
+	$(".addBtn").live("click", function() {
+		var courseCode = $(this).attr("id").substring(6);
+		var urrl = '/scheduelp/view/pos/remove';
+		
+		var btnIcon = $(this).find('.ui-icon');	
+		if (btnIcon.hasClass('ui-icon-plusthick')) {
+			urrl = '/scheduelp/view/pos/add';
+		} 
+		$.ajax({
+			data : {
+				cid : courseCode,
+			},
+			type : 'POST',
+			url : urrl,
+			success : function(response) {
+				btnIcon.toggleClass('ui-icon-plusthick ui-icon-minusthick')
+				// display success message
+				$(".scheduelpInfo").html(response);
+				$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Program of Study");
+				$(".scheduelpInfo").dialog("open");
+			},
+			error : function(xhr, status, error) {
+				$(".scheduelpInfo").html(xhr.responseText);
+				$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Program of Study");
+				$(".scheduelpInfo").dialog("open");
+			}			
+		});
+
+		// prevent default submit
+		return false;
+	});	
 
 });
 
