@@ -19,4 +19,9 @@ public class HomeController extends BaseController {
 	public String getIndex(Model model) throws ScheduelpException {
 		return "index";
 	}
+	
+	@RequestMapping(value = "/faq", method = RequestMethod.GET)
+	public String getHelp(Model model) throws ScheduelpException {
+		return "faq";
+	}
 }

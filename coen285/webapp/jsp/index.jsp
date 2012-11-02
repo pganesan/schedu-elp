@@ -49,7 +49,7 @@
 						<a href="${home}">My Program of Study</a>
 					</li>	
 					<li>
-						<a href="${home}">FAQ</a>
+						<a href="${faq}">FAQ</a>
 					</li>					
 				</ul>
 			</div>
