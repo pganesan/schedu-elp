@@ -1,0 +1,1 @@
+INDEX VERSION 1.122+C:\projects\schedu-elp\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes

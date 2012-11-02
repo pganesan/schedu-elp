@@ -169,3 +169,8 @@ legend {
 	padding: 5px;
 	text-align: center;
 }
+
+/** styles for faq page **/
+#faq h3 {
+	color: Red;
+}
