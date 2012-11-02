@@ -8,7 +8,7 @@
 	<div class="homeBox">
 		<p>
 			<b><a href="#qa1">How do I login?</a></b><br/>
-			Sheila Bernal dolor sit amet, consectetuer adipiscingelit. Duis tellus.
+			Sheila Bernal is this going to work? dolor sit amet, consectetuer adipiscingelit. Duis tellus.
 			Donec ante dolor, iaculis nec, gravidaac, cursus in, eros. Mauris
 			vestibulum, felis et egestasullamcorper, purus nibh vehicula sem, eu
 			egestas antenisl non justo. Fusce tincidunt, lorem nev

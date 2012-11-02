@@ -1,6 +1,10 @@
-#Thu Nov 01 20:07:28 PDT 2012
-eclipse.preferences.version=1
-tipsAndTricks=true
-platformState=1351217286049
-quickStart=false
+#Thu Nov 01 20:43:38 PDT 2012
+>>>>>>>=a360f8789e067181f1acba76b581d9e8f404fc5f
+SWITCH_PERSPECTIVE_ON_PROJECT_CREATION=always
+<<<<<<<=HEAD
 PROBLEMS_FILTERS_MIGRATE=true
+quickStart=false
+tipsAndTricks=true
+eclipse.preferences.version=1
+platformState=1351217286049
+=\=\=\=\=\=\=
