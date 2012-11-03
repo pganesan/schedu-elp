@@ -1,1 +1,0 @@
-INDEX VERSION 1.122+/Users/shradha_gavali/Desktop/SCU/COEN 285/schedu-elp/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
