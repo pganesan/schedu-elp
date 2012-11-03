@@ -8,7 +8,7 @@
 	<div class="homeBox">
 		<p>
 			Welcome to Schedu-elp<br /> <br /> Our vision is to ease your education by enabling you to plan more efficiently. We understand that Santa Clara University Graduate Students are busy: Work, School, Family, Travel - Schedu-elp enables you to plan your education in minimal time and cost.' <br /> <br /> 
-		 <br /> <br />
+		 <br /> Here at Schedu-elp you will be able to plan your schedule based on <br /><br />Preferred Day of Week<br />
 			Sed in dui id lectus commodo elementum. Etiam rhoncus tortor. Proin alorem. Ut nec velit. Quisque varius.
 		</p>
 		<br /> <br />
