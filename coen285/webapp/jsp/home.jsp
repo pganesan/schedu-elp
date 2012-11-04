@@ -6,17 +6,26 @@
 	<h3>Welcome to Schedu-elp - Your Online Academic Planner.</h3>
 	<br />
 	<div id="firstDiv">
-		<p>
-			Welcome to Schedu-elp<br /> <br /> Our vision is to ease your education by enabling you to plan more efficiently. We understand that Santa Clara University Graduate Students are busy: Work, School, Family, Travel - Schedu-elp enables you to plan your education in minimal time and cost.' <br /> <br /> 
-		 <br /> Here at Schedu-elp you will be able to plan your schedule based on <br /><br />Preferred Day of Week<br />
-			Sed in dui id lectus commodo elementum. Etiam rhoncus tortor. Proin alorem. Ut nec velit. Quisque varius.
+		<p><h5>
+		 <br /> Our vision is to ease your education by enabling you to plan more efficiently. <br /><br /> Here at schedu-elp, we understand that Santa Clara University Graduate Students are busy, between Work, School, Family, and Travel. <br />Schedu-elp enables you to plan your education in minimal time and cost. </h5><br /> <br /> 
+		  <br /> <br />
+		 	<table summary="Venn" width="20%">
+				<tr>
+					<img id=venndiag alt="scheduelplogo" src="../images/scheduelp.jpg" /></td>
+				</tr>
+			</table>
+		 <br /> <h5> We are the solution for the challenges faced by today's ambitious student</h5><br />
 		</p>
-		<br /> <br />
-		<h3>Phasellus orci. Etiam tempor elit auctor magna.</h3>
-		<br />
-		<h4 class="subheading">Aenean condimentum diam et turpis.</h4>
+		<br /> <br /><br /><br />
+	
+	</div>
+			
 	</div>
 	<div id="secondDiv">
-		<p>this is second div</p>
+		<p>
+		<h3>Need Help? Look no further</h3>
+		<br /><br /> <br />
+		<h4 class="subheading">We believe in making your experience as simple as possible. <br /> Simply contact us at:<br />info@scheduelp.com <br /> (1800) 438-Help.</h4>
+		</p>
 	</div>
 </form>
