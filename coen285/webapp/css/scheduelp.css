@@ -76,6 +76,8 @@ p.ui-state-highlight {
 	height: 65px;
 }
 
+
+
 .title {
 	font-size: 30pt;
 	width: 50%;
@@ -124,10 +126,27 @@ form hr {
 	color: #668b18;
 }
 
-div.homeBox {
-	width: 65%;
+#home h5 {
+	color: #914055;
+}
+
+div#firstDiv {
+	width: 55%;
+	font-size: 14pt;
 	padding: 0px 7px;
 	float: left;
+}
+
+
+div#secondDiv {
+	width: 25%;
+	padding: 0px 5px;
+	float: right;
+}
+#venndiag {
+	margin-left: 25px;
+	height: 250px;
+	width: 250px;
 }
 
 /** styles for sign in page**/
