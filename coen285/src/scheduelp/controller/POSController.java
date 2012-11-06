@@ -33,9 +33,7 @@ public class POSController extends BaseController {
 	@RequestMapping(value = "/pos/remove", method = RequestMethod.POST)
 	public @ResponseBody String removeCourse(@ModelAttribute("userDetail") UserSessionTO userDetail,
 			@RequestParam("cid") String courseCode, Model model) throws ScheduelpException {
-//		posService.removeCourse(userDetail.getUserID(), courseCode);
-		
-		return courseCode.concat(" has been removed from your Program of Study");
+		throw new ScheduelpException("Sorry! This feature is not supported with this release of Schedu-elp");
 	}
 
 }
