@@ -112,7 +112,7 @@ $(function() {
 		return false;
 	});	
 	
-	// show all reviews for selected course
+	// add or remove selected course
 	$(".addBtn").live("click", function() {
 		var courseCode = $(this).attr("id").substring(6);
 		var urrl = '/scheduelp/view/pos/remove';
