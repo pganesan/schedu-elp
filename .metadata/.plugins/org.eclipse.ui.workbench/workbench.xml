@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="62" version="2.0">
+<workbench progressCount="60" version="2.0">
 <workbenchAdvisor/>
 <window height="804" maximized="true" width="1024" x="87" y="596">
 <fastViewData fastViewLocation="1024"/>
@@ -20,6 +20,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="183" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -31,13 +32,23 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.wst.css.core.csssource.source" name="scheduelp.css" partName="scheduelp.css" path="C:/projects/schedu-elp/coen285/webapp/css/scheduelp.css" title="scheduelp.css" tooltip="coen285/webapp/css/scheduelp.css" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/coen285/webapp/css/scheduelp.css"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2596" selectionTopPixel="437"/>
+</editor>
 <editor activePart="true" focus="true" id="org.eclipse.jst.jsp.core.jspsource.source" name="faq.jsp" partName="faq.jsp" path="C:/projects/schedu-elp/coen285/webapp/jsp/faq.jsp" title="faq.jsp" tooltip="coen285/webapp/jsp/faq.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/coen285/webapp/jsp/faq.jsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5604" selectionTopPixel="853"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4631" selectionTopPixel="677"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="home.jsp" partName="home.jsp" path="C:/projects/schedu-elp/coen285/webapp/jsp/home.jsp" title="home.jsp" tooltip="coen285/webapp/jsp/home.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/coen285/webapp/jsp/home.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -191,6 +202,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/coen285/webapp/jsp/faq.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/coen285/webapp/jsp/home.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/coen285/webapp/jsp/faq.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" path="/coen285/webapp/css/scheduelp.css"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/coen285/webapp/jsp/faq.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/coen285/webapp/jsp/home.jsp"/>
 </editors>
 <item historyLabel="faq.jsp" index="0">
 <position info="not_deleted" x="0" y="0"/>
@@ -198,8 +212,26 @@
 <item historyLabel="home.jsp" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="faq.jsp" index="2">
-<position info="not_deleted" x="477" y="0"/>
+<item historyLabel="faq.jsp" index="2">
+<position info="not_deleted" x="1379" y="0"/>
+</item>
+<item historyLabel="scheduelp.css" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="faq.jsp" index="4">
+<position/>
+</item>
+<item historyLabel="scheduelp.css" index="3">
+<position info="not_deleted" x="2596" y="0"/>
+</item>
+<item historyLabel="faq.jsp" index="4">
+<position info="not_deleted" x="372" y="0"/>
+</item>
+<item historyLabel="home.jsp" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="faq.jsp" index="4">
+<position info="not_deleted" x="345" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -226,6 +258,9 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="faq.jsp" tooltip="coen285/webapp/jsp/faq.jsp">
 <persistable path="/coen285/webapp/jsp/faq.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" name="scheduelp.css" tooltip="coen285/webapp/css/scheduelp.css">
+<persistable path="/coen285/webapp/css/scheduelp.css"/>
 </file>
 </mruList>
 </workbench>
