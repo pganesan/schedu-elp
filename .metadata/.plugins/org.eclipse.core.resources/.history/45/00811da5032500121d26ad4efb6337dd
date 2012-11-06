@@ -7,9 +7,8 @@
 	<br />
 	<div class="homeBox">
 		<p>
-			<b><a href="#qa1">What is Schedu-elp?</a></b><br/><br/>
-			<b><a href="#qa2">How do I sign in?</a></b><br/>
-			Sheila Bernal loves Gerard Bernal!!! dolor sit amet, consectetuer adipiscingelit. Duis tellus.
+			<b><a href="#qa1">How do I login?</a></b><br/>
+			Sheila Bernal is this going to work? dolor sit amet, consectetuer adipiscingelit. Duis tellus.
 			Donec ante dolor, iaculis nec, gravidaac, cursus in, eros. Mauris
 			vestibulum, felis et egestasullamcorper, purus nibh vehicula sem, eu
 			egestas antenisl non justo. Fusce tincidunt, lorem nev
@@ -83,10 +82,8 @@
 		</p>
 		<br /> <br />
 		<h3>Phasellus orci. Etiam tempor elit auctor magna.</h3>
-		<a name="qa1"></a><b>What is Schedu-elp?</b><br/>
-		<p>Answer Here.</p>
-		<a name="qa2"></a><b>How do I sign in?</b><br/>
-		<p>First, go to the top right corner of the Schedu-elp home page and click on "Sign In"".  You will be prompted to enter your SCU student identification number.  Your SCU student ID should start with a "W", followed by 7 digits.  
+		<a name="qa1"></a><b>How Do I login?</b><br/>
+		<p>First, enter your SCU student identification number.  Your SCU student ID should start with a "W", followed by 7 digits.  
 		Your password is your Novell password.  If you are unsure what your Novell password is, you can find it on Ecampus, under Personal Portfolio > SCU Electronic Information.</p>
 		<br />
 		<h4 class="subheading">Aenean condimentum diam et turpis.</h4>

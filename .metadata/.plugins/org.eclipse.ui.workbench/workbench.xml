@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="37" version="2.0">
+<workbench progressCount="62" version="2.0">
 <workbenchAdvisor/>
 <window height="804" maximized="true" width="1024" x="87" y="596">
 <fastViewData fastViewLocation="1024"/>
@@ -37,7 +37,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.jst.jsp.core.jspsource.source" name="faq.jsp" partName="faq.jsp" path="C:/projects/schedu-elp/coen285/webapp/jsp/faq.jsp" title="faq.jsp" tooltip="coen285/webapp/jsp/faq.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/coen285/webapp/jsp/faq.jsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="420" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5604" selectionTopPixel="853"/>
 </editor>
 </editors>
 <views>
@@ -189,9 +189,17 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/coen285/webapp/jsp/faq.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/coen285/webapp/jsp/home.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/coen285/webapp/jsp/faq.jsp"/>
 </editors>
-<item active="true" historyLabel="faq.jsp" index="0">
+<item historyLabel="faq.jsp" index="0">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="home.jsp" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="faq.jsp" index="2">
+<position info="not_deleted" x="477" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -212,6 +220,9 @@
 <mruList>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="deploy.bat" tooltip="coen285/webapp/deploy.bat">
 <persistable path="/coen285/webapp/deploy.bat"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="home.jsp" tooltip="coen285/webapp/jsp/home.jsp">
+<persistable path="/coen285/webapp/jsp/home.jsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="faq.jsp" tooltip="coen285/webapp/jsp/faq.jsp">
 <persistable path="/coen285/webapp/jsp/faq.jsp"/>
