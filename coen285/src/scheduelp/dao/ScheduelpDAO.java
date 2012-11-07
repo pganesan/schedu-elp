@@ -40,7 +40,7 @@ public class ScheduelpDAO {
 	public Student getStudentRecord(String userID, String pwd) {
 		Student student = null;
 
-		String sql = "SELECT student_id, first_name, middle_name, last_name, degree FROM student "
+		String sql = "SELECT student_id, first_name, middle_name, last_name, degree, email FROM student "
 				+ "WHERE student_id=:userID AND student_pwd=:pwd";
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("userID", userID);
@@ -118,15 +118,12 @@ public class ScheduelpDAO {
 	}
 
 	public void addCourseToProgram(String userID, String degree, String courseCode) {
-		String sql = "INSERT INTO program_of_study(student_id, course_code, special_requirement) "
-				+ "VALUES (:studentID,:courseCode, "
-				+ "(SELECT requirement_id FROM special_requirement "
-				+ "WHERE course_code=:courseCode AND (degree=:degree OR degree IS NULL)))";
+		String sql = "INSERT INTO program_of_study(student_id, course_code) "
+				+ "VALUES (:studentID,:courseCode)";
 
 		Map<String, Object> paramMap = new HashMap<String, Object>();
 		paramMap.put("studentID", userID);
 		paramMap.put("courseCode", courseCode);
-		paramMap.put("degree", degree);
 		
 		SqlParameterSource parameters = new MapSqlParameterSource(paramMap);
 		jdbcTemplate.update(sql, parameters);

@@ -2,7 +2,7 @@ package scheduelp.model;
 
 import java.io.Serializable;
 
-public class ProgramOfStudy implements Serializable {
+public class PlannedCourse implements Serializable {
 
 	private static final long serialVersionUID = 3003713312773775334L;
 
@@ -12,7 +12,7 @@ public class ProgramOfStudy implements Serializable {
 
 	private Integer units;
 
-	private String specialRequirement;
+	private SpecialRequirement specialRequirement;
 
 	public String getCourseCode() {
 		return courseCode;
@@ -38,11 +38,11 @@ public class ProgramOfStudy implements Serializable {
 		this.units = units;
 	}
 
-	public String getSpecialRequirement() {
+	public SpecialRequirement getSpecialRequirement() {
 		return specialRequirement;
 	}
 
-	public void setSpecialRequirement(String specialRequirement) {
+	public void setSpecialRequirement(SpecialRequirement specialRequirement) {
 		this.specialRequirement = specialRequirement;
 	}
 

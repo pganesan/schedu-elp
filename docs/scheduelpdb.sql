@@ -89,7 +89,7 @@ CREATE TABLE `course_review` (
   KEY `course_review_course_code_fk1` (`course_code`),
   CONSTRAINT `course_review_course_code_fk1` FOREIGN KEY (`course_code`) REFERENCES `course` (`course_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `course_review_student_id_fk2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `course_review` (
 
 LOCK TABLES `course_review` WRITE;
 /*!40000 ALTER TABLE `course_review` DISABLE KEYS */;
-INSERT INTO `course_review` VALUES (1,'COEN 210','W0879667',4,'Very interesting class. I initially wanted to waive this course, but I am glad I took it.','2012-10-28 19:04:12'),(2,'COEN 233','W0879667',5,'Great course. Fundamental course that every computer science student must take!','2012-10-28 19:44:02'),(3,'COEN 210','W0879776',5,'Good course. Exams are tricky. But if you understand the concepts well, you will certainly get an A.','2012-10-27 17:45:12'),(4,'COEN 233','W0879776',4,'I thoroughly enjoyed every bit of this course! The Professor is a really busy person, but takes time to answer questions through emails. ','2012-10-29 11:15:49');
+INSERT INTO `course_review` VALUES (1,'COEN 210','W0879667',4,'Very interesting class. I initially wanted to waive this course, but I am glad I took it.','2012-10-28 19:04:12'),(2,'COEN 233','W0879667',5,'Great course. Fundamental course that every computer science student must take!','2012-10-28 19:44:02'),(3,'COEN 210','W0879776',5,'Good course. Exams are tricky. But if you understand the concepts well, you will certainly get an A.','2012-10-27 17:45:12'),(4,'COEN 233','W0879776',4,'I thoroughly enjoyed every bit of this course! The Professor is a really busy person, but takes time to answer questions through emails. ','2012-10-29 11:15:49'),(5,'COEN 210','W0879667',4,'I am writing this review on behalf on a friend. Initially, she wanted to waive this course. She was very impressed with the knowledge of the Professor and she is happy she took this course.','2012-11-06 15:52:39');
 /*!40000 ALTER TABLE `course_review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,6 +130,38 @@ LOCK TABLES `course_schedule` WRITE;
 /*!40000 ALTER TABLE `course_schedule` DISABLE KEYS */;
 INSERT INTO `course_schedule` VALUES ('COEN 210','Fall','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 210','Spring','MW','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 218','Spring','A','08:10 am-10:00 am','08:10:00','10:00:00'),('COEN 225','Winter','M','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 233','Fall','MW','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 233','Spring','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 233','Winter','MW','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 235','Fall','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 250','Fall','T','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 250','Winter','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 259','Winter','MW','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 275','Summer','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 275','Winter','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 276','Fall','MW','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 279','Fall','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 279','Spring','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 279','Winter','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 280','Winter','TR','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 283','Fall','TR','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 283','Spring','TR','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 283','Winter','WF','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 285','Fall','TR','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 286','Spring','W','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 286','Winter','T','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 287','Winter','M','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 289','Fall','W','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 289','Spring','W','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 313','Spring','W','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 317','Fall','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 359','Summer','TR','07:10 pm-09:00 pm','19:10:00','21:00:00');
 /*!40000 ALTER TABLE `course_schedule` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `course_spec_reqt`
+--
+
+DROP TABLE IF EXISTS `course_spec_reqt`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `course_spec_reqt` (
+  `course_reqt_id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_code` varchar(45) NOT NULL,
+  `degree` varchar(45) DEFAULT NULL,
+  `special_requirement` int(11) NOT NULL,
+  PRIMARY KEY (`course_reqt_id`),
+  KEY `course_spec_reqt_special_reqmt` (`special_requirement`),
+  KEY `course_spec_reqt_course_code` (`course_code`),
+  KEY `course_spec_reqt_degree` (`degree`),
+  CONSTRAINT `course_spec_reqt_degree` FOREIGN KEY (`degree`) REFERENCES `degree_program` (`degree_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `course_spec_reqt_course_code` FOREIGN KEY (`course_code`) REFERENCES `course` (`course_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `course_spec_reqt_special_reqmt` FOREIGN KEY (`special_requirement`) REFERENCES `special_requirement` (`requirement_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `course_spec_reqt`
+--
+
+LOCK TABLES `course_spec_reqt` WRITE;
+/*!40000 ALTER TABLE `course_spec_reqt` DISABLE KEYS */;
+INSERT INTO `course_spec_reqt` VALUES (1,'COEN 210','MSCE',3),(3,'COEN 279','MSCE',3),(4,'COEN 283','MSCE',3),(5,'COEN 250',NULL,7),(9,'COEN 275','MSSE',4),(10,'COEN 285','MSSE',4),(11,'COEN 286','MSSE',4),(12,'COEN 287',NULL,7),(13,'COEN 289',NULL,7);
+/*!40000 ALTER TABLE `course_spec_reqt` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -166,14 +198,11 @@ DROP TABLE IF EXISTS `program_of_study`;
 CREATE TABLE `program_of_study` (
   `student_id` varchar(45) NOT NULL,
   `course_code` varchar(45) NOT NULL,
-  `special_requirement` int(11) DEFAULT NULL,
   PRIMARY KEY (`student_id`,`course_code`),
   KEY `program_of_study_course_code_fk1` (`course_code`),
   KEY `program_of_study_student_id_fk2` (`student_id`),
-  KEY `program_of_study_spec_rqmt_fk3` (`special_requirement`),
   CONSTRAINT `program_of_study_course_code_fk1` FOREIGN KEY (`course_code`) REFERENCES `course` (`course_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `program_of_study_student_id_fk2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `program_of_study_spec_rqmt_fk3` FOREIGN KEY (`special_requirement`) REFERENCES `special_requirement` (`requirement_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `program_of_study_student_id_fk2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -183,7 +212,7 @@ CREATE TABLE `program_of_study` (
 
 LOCK TABLES `program_of_study` WRITE;
 /*!40000 ALTER TABLE `program_of_study` DISABLE KEYS */;
-INSERT INTO `program_of_study` VALUES ('W0879667','COEN 275',NULL),('W0879667','COEN 250',2);
+INSERT INTO `program_of_study` VALUES ('W0879667','COEN 233'),('W0879667','COEN 250'),('W0879776','COEN 250'),('W0879667','COEN 275'),('W0879667','COEN 283');
 /*!40000 ALTER TABLE `program_of_study` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -196,15 +225,10 @@ DROP TABLE IF EXISTS `special_requirement`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `special_requirement` (
   `requirement_id` int(11) NOT NULL AUTO_INCREMENT,
-  `course_code` varchar(45) NOT NULL,
-  `degree` varchar(45) DEFAULT NULL,
-  `requirement` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`requirement_id`),
-  KEY `special_requirement_course_code_fk1` (`course_code`),
-  KEY `special_requirement_degree_fk2` (`degree`),
-  CONSTRAINT `special_requirement_course_code_fk1` FOREIGN KEY (`course_code`) REFERENCES `course` (`course_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `special_requirement_degree_fk2` FOREIGN KEY (`degree`) REFERENCES `degree_program` (`degree_code`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+  `requirement_desc` varchar(200) DEFAULT NULL,
+  `units` int(11) DEFAULT NULL,
+  PRIMARY KEY (`requirement_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -213,7 +237,7 @@ CREATE TABLE `special_requirement` (
 
 LOCK TABLES `special_requirement` WRITE;
 /*!40000 ALTER TABLE `special_requirement` DISABLE KEYS */;
-INSERT INTO `special_requirement` VALUES (1,'COEN 210','MSCE','MSCE Core'),(2,'COEN 250',NULL,'SCU Graduate Core'),(3,'COEN 279','MSCE','MSCE Core'),(4,'COEN 283','MSCE','MSCE Core'),(15,'COEN 275','MSSE','MSSE Core'),(16,'COEN 285','MSSE','MSSE Core'),(17,'COEN 286','MSSE','MSSE Core'),(18,'COEN 287',NULL,'SCU Graduate Core'),(19,'COEN 289',NULL,'SCU Graduate Core');
+INSERT INTO `special_requirement` VALUES (1,'Approved Transfer Credit',9),(2,'Foundation',NULL),(3,'MSCE Core',NULL),(4,'MSSE Core',NULL),(5,'Engineering Management Stem',20),(6,'Technical Stem',19),(7,'SCU Graduate Core',6),(8,'Capstone Project',NULL);
 /*!40000 ALTER TABLE `special_requirement` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,4 +286,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-10-30 11:14:00
+-- Dump completed on 2012-11-06 16:06:08
