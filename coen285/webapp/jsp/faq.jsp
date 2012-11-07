@@ -99,7 +99,7 @@
 		<a name="qa13"></a><b>Can teachers comment on the reviews?</b><br/><br/>
 		<p></p><br/>
 		<a name="qa14"></a><b>Can I make an anonymous review?</b><br/><br/>
-		<p></p><br/>
+		<p>Yes.</p><br/>
 		<a name="qa15"></a><b>Can I write a review if I am not a student?</b><br/><br/>
 		<p></p><br/>
 		<br />
