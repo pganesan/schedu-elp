@@ -10,7 +10,7 @@ public class SpecialRequirement implements Serializable {
 
 	private String requirementDesc;
 
-	private String reqtUnits;
+	private Integer reqtUnits;
 
 	public Integer getRequirementID() {
 		return requirementID;
@@ -28,11 +28,11 @@ public class SpecialRequirement implements Serializable {
 		this.requirementDesc = requirementDesc;
 	}
 
-	public String getReqtUnits() {
+	public Integer getReqtUnits() {
 		return reqtUnits;
 	}
 
-	public void setReqtUnits(String reqtUnits) {
+	public void setReqtUnits(Integer reqtUnits) {
 		this.reqtUnits = reqtUnits;
 	}
 

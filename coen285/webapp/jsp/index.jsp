@@ -18,7 +18,7 @@
 	</head>
 	<c:url var="home" value="/view/home" />
 	<c:url var="courseSearch" value="/view/search" />
-	<c:url var="myProgram" value="/view/program" />
+	<c:url var="pos" value="/view/pos" />
 	<c:url var="faq" value="/view/faq" />
 	<body>
 		<div id="header">

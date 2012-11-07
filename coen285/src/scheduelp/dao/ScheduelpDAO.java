@@ -19,9 +19,11 @@ import org.springframework.stereotype.Repository;
 
 import scheduelp.dto.CourseSearchTO;
 import scheduelp.model.Course;
+import scheduelp.model.PlannedCourse;
 import scheduelp.model.Review;
 import scheduelp.model.Student;
 import scheduelp.model.mapping.CourseMapper;
+import scheduelp.model.mapping.PlannedCourseMapper;
 import scheduelp.model.mapping.ReviewMapper;
 import scheduelp.model.mapping.StudentMapper;
 
@@ -124,9 +126,28 @@ public class ScheduelpDAO {
 		Map<String, Object> paramMap = new HashMap<String, Object>();
 		paramMap.put("studentID", userID);
 		paramMap.put("courseCode", courseCode);
-		
+
 		SqlParameterSource parameters = new MapSqlParameterSource(paramMap);
 		jdbcTemplate.update(sql, parameters);
+	}
+
+	public List<PlannedCourse> getPlannedCourses(String userID, String degree) {
+		String sql = "SELECT p.course_code, "
+				+ "c.course_name, c.units, "
+				+ "COALESCE(cr.special_requirement,999999) AS special_requirement, "
+				+ "IFNULL(r.requirement_desc,'Electives') AS requirement_desc, r.units AS reqt_units "
+				+ "FROM program_of_study p "
+				+ "INNER JOIN course c ON p.course_code = c.course_code "
+				+ "LEFT JOIN course_spec_reqt cr ON (p.course_code = cr.course_code AND (cr.degree = :degree OR cr.degree IS NULL)) "
+				+ "LEFT JOIN special_requirement r ON cr.special_requirement = r.requirement_id "
+				+ "WHERE p.student_id = :studentID "
+				+ "ORDER BY COALESCE(cr.special_requirement,999999) ";
+
+		Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("studentID", userID);
+		parameters.put("degree", degree);
+
+		return jdbcTemplate.query(sql, parameters, new PlannedCourseMapper());
 	}
 
 	// sample insert

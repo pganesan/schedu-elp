@@ -1,6 +1,7 @@
 package scheduelp.dto;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 import scheduelp.model.PlannedCourse;
 import scheduelp.model.SpecialRequirement;
@@ -9,10 +10,10 @@ public class ProgramOfStudyTO {
 
 	private Integer plannedUnits;
 
-	private Integer requiredUnits;
+	private Integer percentComplete;
 
-	private HashMap<SpecialRequirement, PlannedCourse> programMap;
-
+	private LinkedHashMap<SpecialRequirement, List<PlannedCourse>> programMap;
+	
 	public Integer getPlannedUnits() {
 		return plannedUnits;
 	}
@@ -21,19 +22,19 @@ public class ProgramOfStudyTO {
 		this.plannedUnits = plannedUnits;
 	}
 
-	public Integer getRequiredUnits() {
-		return requiredUnits;
+	public Integer getPercentComplete() {
+		return percentComplete;
 	}
 
-	public void setRequiredUnits(Integer requiredUnits) {
-		this.requiredUnits = requiredUnits;
+	public void setPercentComplete(Integer percentComplete) {
+		this.percentComplete = percentComplete;
 	}
 
-	public HashMap<SpecialRequirement, PlannedCourse> getProgramMap() {
+	public LinkedHashMap<SpecialRequirement, List<PlannedCourse>> getProgramMap() {
 		return programMap;
 	}
 
-	public void setProgramMap(HashMap<SpecialRequirement, PlannedCourse> programMap) {
+	public void setProgramMap(LinkedHashMap<SpecialRequirement, List<PlannedCourse>> programMap) {
 		this.programMap = programMap;
 	}
 
