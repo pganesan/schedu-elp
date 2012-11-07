@@ -58,7 +58,34 @@
 			If you would like to change your password, you would have to change your Novell password.  You can do this on Ecampus, under 
 			Personal Portfolio > SCU Electronic Information, the same place you go to find your Novell password.</p><br/>
 		<a name="qa7"></a><b>What criteria can I use to search for a class?</b><br/><br/>
-		<p></p><br/>
+		<p>You can search for a class with a number of different criteria.  The options available are:
+			<ul>
+				<li>Course Code</li>
+				<li>Course Name</li>
+				<li>Course Availability</li>
+					<ul>
+						<li>Day offered</li>
+						<li>Time offered</li>
+					</ul>
+			</ul>
+			Soon you will also be able to search for a class using criteria such as
+			<ul>
+				<li>Materials used for class</li>
+				<li>Prerequisites for a particular class</li>
+				<li>Nature of course work</li>
+					<ul>
+						<li>Group</li>
+						<li>Individual</li>
+					</ul>
+				<li>Momentum of workload</li>
+				<li>Participation</li>
+				<li>Special requirements</li>
+					<ul>
+						<li>Issues in Professional Practice</li>
+						<li>Science, Technology, Society (STS) Minor</li>
+					</ul>
+			</ul>
+		</p><br/>
 		<a name="qa8"></a><b>How do I search for a class?</b><br/><br/>
 		<p></p><br/>
 		<a name="qa9"></a><b>What is a program of study?</b><br/><br/>
