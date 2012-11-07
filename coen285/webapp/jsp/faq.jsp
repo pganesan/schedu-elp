@@ -95,7 +95,7 @@
 		<a name="qa11"></a><b>Are the reviews filtered?</b><br/><br/>
 		<p></p><br/>
 		<a name="qa12"></a><b>Am I allowed to write a negative review?</b><br/><br/>
-		<p></p><br/>
+		<p>Yes.  All reviews, whether they are positive or negative, are allowed.</p><br/>
 		<a name="qa13"></a><b>Can teachers comment on the reviews?</b><br/><br/>
 		<p></p><br/>
 		<a name="qa14"></a><b>Can I make an anonymous review?</b><br/><br/>
