@@ -50,8 +50,8 @@ public class SearchController extends BaseController {
 		daysOfWeek.put("W", "W");
 		daysOfWeek.put("R", "Th");
 		daysOfWeek.put("F", "F");
-		daysOfWeek.put("A", "Sa");
-		daysOfWeek.put("S", "Su");
+		daysOfWeek.put("Sa", "Sa");
+		daysOfWeek.put("Su", "Su");
 
 		return daysOfWeek;
 	}

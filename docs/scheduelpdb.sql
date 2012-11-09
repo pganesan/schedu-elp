@@ -98,7 +98,7 @@ CREATE TABLE `course_review` (
 
 LOCK TABLES `course_review` WRITE;
 /*!40000 ALTER TABLE `course_review` DISABLE KEYS */;
-INSERT INTO `course_review` VALUES (1,'COEN 210','W0879667',4,'Very interesting class. I initially wanted to waive this course, but I am glad I took it.','2012-10-28 19:04:12'),(2,'COEN 233','W0879667',5,'Great course. Fundamental course that every computer science student must take!','2012-10-28 19:44:02'),(3,'COEN 210','W0879776',5,'Good course. Exams are tricky. But if you understand the concepts well, you will certainly get an A.','2012-10-27 17:45:12'),(4,'COEN 233','W0879776',4,'I thoroughly enjoyed every bit of this course! The Professor is a really busy person, but takes time to answer questions through emails. ','2012-10-29 11:15:49'),(5,'COEN 210','W0879667',4,'I am writing this review on behalf on a friend. Initially, she wanted to waive this course. She was very impressed with the knowledge of the Professor and she is happy she took this course.','2012-11-06 15:52:39');
+INSERT INTO `course_review` VALUES (1,'COEN 210','W9999999',4,'Very interesting class. I initially wanted to waive this course, but I am glad I took it.','2012-10-28 19:04:12'),(2,'COEN 233','W9999999',5,'Great course. Fundamental course that every computer science student must take!','2012-10-28 19:44:02'),(3,'COEN 210','W1111111',5,'Good course. Exams are tricky. But if you understand the concepts well, you will certainly get an A.','2012-10-27 17:45:12'),(4,'COEN 233','W1111111',4,'I thoroughly enjoyed every bit of this course! The Professor is a really busy person, but takes time to answer questions through emails. ','2012-10-29 11:15:49'),(5,'COEN 210','W5555555',4,'I am writing this review on behalf on a friend. Initially, she wanted to waive this course. She was very impressed with the knowledge of the Professor and she is happy she took this course.','2012-11-06 15:52:39');
 /*!40000 ALTER TABLE `course_review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +113,6 @@ CREATE TABLE `course_schedule` (
   `course_code` varchar(45) NOT NULL,
   `quarter` varchar(45) NOT NULL,
   `course_days` varchar(45) NOT NULL,
-  `time_of_day` varchar(45) NOT NULL,
   `course_start_time` time DEFAULT NULL,
   `course_end_time` time DEFAULT NULL,
   PRIMARY KEY (`course_code`,`quarter`),
@@ -128,7 +127,7 @@ CREATE TABLE `course_schedule` (
 
 LOCK TABLES `course_schedule` WRITE;
 /*!40000 ALTER TABLE `course_schedule` DISABLE KEYS */;
-INSERT INTO `course_schedule` VALUES ('COEN 210','Fall','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 210','Spring','MW','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 218','Spring','A','08:10 am-10:00 am','08:10:00','10:00:00'),('COEN 225','Winter','M','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 233','Fall','MW','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 233','Spring','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 233','Winter','MW','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 235','Fall','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 250','Fall','T','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 250','Winter','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 259','Winter','MW','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 275','Summer','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 275','Winter','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 276','Fall','MW','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 279','Fall','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 279','Spring','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 279','Winter','TR','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 280','Winter','TR','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 283','Fall','TR','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 283','Spring','TR','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 283','Winter','WF','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 285','Fall','TR','07:10 pm-09:00 pm','19:10:00','21:00:00'),('COEN 286','Spring','W','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 286','Winter','T','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 287','Winter','M','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 289','Fall','W','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 289','Spring','W','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 313','Spring','W','07:10 am-09:00 am','07:10:00','09:00:00'),('COEN 317','Fall','MW','05:10 pm-07:00 pm','17:10:00','19:00:00'),('COEN 359','Summer','TR','07:10 pm-09:00 pm','19:10:00','21:00:00');
+INSERT INTO `course_schedule` VALUES ('COEN 210','Fall','TR','17:10:00','19:00:00'),('COEN 210','Spring','MW','07:10:00','09:00:00'),('COEN 218','Spring','Sa','08:10:00','10:00:00'),('COEN 225','Winter','M','17:10:00','19:00:00'),('COEN 233','Fall','MW','19:10:00','21:00:00'),('COEN 233','Spring','TR','17:10:00','19:00:00'),('COEN 233','Winter','MW','19:10:00','21:00:00'),('COEN 235','Fall','MW','17:10:00','19:00:00'),('COEN 250','Fall','T','17:10:00','19:00:00'),('COEN 250','Winter','MW','17:10:00','19:00:00'),('COEN 259','Winter','MW','19:10:00','21:00:00'),('COEN 275','Summer','TR','17:10:00','19:00:00'),('COEN 275','Winter','TR','17:10:00','19:00:00'),('COEN 276','Fall','MW','19:10:00','21:00:00'),('COEN 279','Fall','MW','17:10:00','19:00:00'),('COEN 279','Spring','MW','17:10:00','19:00:00'),('COEN 279','Winter','TR','17:10:00','19:00:00'),('COEN 280','Winter','TR','07:10:00','09:00:00'),('COEN 283','Fall','TR','19:10:00','21:00:00'),('COEN 283','Spring','TR','19:10:00','21:00:00'),('COEN 283','Winter','WF','07:10:00','09:00:00'),('COEN 285','Fall','TR','19:10:00','21:00:00'),('COEN 286','Spring','W','07:10:00','09:00:00'),('COEN 286','Winter','T','07:10:00','09:00:00'),('COEN 287','Winter','M','17:10:00','19:00:00'),('COEN 289','Fall','W','17:10:00','19:00:00'),('COEN 289','Spring','W','17:10:00','19:00:00'),('COEN 313','Spring','W','07:10:00','09:00:00'),('COEN 317','Fall','MW','17:10:00','19:00:00'),('COEN 359','Summer','TR','19:10:00','21:00:00');
 /*!40000 ALTER TABLE `course_schedule` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,13 +188,13 @@ INSERT INTO `degree_program` VALUES ('MSCE','M.S. Computer Science & Engineering
 UNLOCK TABLES;
 
 --
--- Table structure for table `program_of_study`
+-- Table structure for table `program_of_studies`
 --
 
-DROP TABLE IF EXISTS `program_of_study`;
+DROP TABLE IF EXISTS `program_of_studies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `program_of_study` (
+CREATE TABLE `program_of_studies` (
   `student_id` varchar(45) NOT NULL,
   `course_code` varchar(45) NOT NULL,
   PRIMARY KEY (`student_id`,`course_code`),
@@ -207,13 +206,13 @@ CREATE TABLE `program_of_study` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `program_of_study`
+-- Dumping data for table `program_of_studies`
 --
 
-LOCK TABLES `program_of_study` WRITE;
-/*!40000 ALTER TABLE `program_of_study` DISABLE KEYS */;
-INSERT INTO `program_of_study` VALUES ('W0879667','COEN 233'),('W0879667','COEN 250'),('W0879776','COEN 250'),('W0879667','COEN 275'),('W0879667','COEN 283');
-/*!40000 ALTER TABLE `program_of_study` ENABLE KEYS */;
+LOCK TABLES `program_of_studies` WRITE;
+/*!40000 ALTER TABLE `program_of_studies` DISABLE KEYS */;
+INSERT INTO `program_of_studies` VALUES ('W9999999','COEN 233'),('W1111111','COEN 250'),('W9999999','COEN 250'),('W9999999','COEN 275'),('W9999999','COEN 283');
+/*!40000 ALTER TABLE `program_of_studies` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -254,10 +253,6 @@ CREATE TABLE `student` (
   `first_name` varchar(45) NOT NULL,
   `middle_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) NOT NULL,
-  `street_address` varchar(45) DEFAULT NULL,
-  `city` varchar(45) DEFAULT NULL,
-  `state` varchar(2) DEFAULT NULL,
-  `zip` int(11) DEFAULT NULL,
   `phone_number` varchar(12) DEFAULT NULL,
   `email` varchar(45) NOT NULL,
   `degree` varchar(45) NOT NULL,
@@ -273,7 +268,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES ('W0879667','test','Poornima',NULL,'Ganesan','123 Third ave','Santa Clara','CA',95053,'408-458-7869','pganesan@scu.edu','MSCE'),('W0879776','test1','Mike',NULL,'Schell','45 5th Place','Milpitas','CA',95035,'','mschell@scu.edu','MSSE');
+INSERT INTO `student` VALUES ('W1111111','test1','Sheila',NULL,'Castillo','','scastillo@scu.edu','MSSE'),('W5555555','test2','Shradha',NULL,'Cripe',NULL,'scripe@scu.edu','MSEM'),('W9999999','test3','Poornima',NULL,'Ganesan','444-444-444','pganesan@scu.edu','MSCE');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -286,4 +281,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-06 16:06:08
+-- Dump completed on 2012-11-09 10:36:31
