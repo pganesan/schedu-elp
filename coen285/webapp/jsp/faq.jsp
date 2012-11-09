@@ -3,37 +3,37 @@
 	pageEncoding="UTF-8"%>
 
 <form action="" method="get" id="faq" name="faq" target="_blank">
+<div id="leftDiv" class="ui-widget-content ui-corner-all ui-helper-reset">
 	<h3>Frequently Asked Questions</h3>
-	<br />
-	<div class="homeBox">
 		<p>
 			<h4 class="subheading">General Questions</h4>
-			<b><a href="#qa1">What is Schedu-elp?</a></b><br/><br/>
-			<b><a href="#qa2">Is it free?</a></b><br/><br/>
-			<b><a href="#qa3">Can anyone use Schedu-elp?</a></b><br/><br/>
-			<b><a href="#qa4">Does it work for other schools?</a></b><br/><br/>
+			<a href="#qa1">What is Schedu-elp?</a><br/>
+			<a href="#qa2">Is it free?</a><br/>
+			<a href="#qa3">Can anyone use Schedu-elp?</a><br/>
+			<a href="#qa4">Does it work for other schools?</a><br/><br/>
 			
 			<h4 class="subheading">Sign In Questions</h4>
-			<b><a href="#qa5">How do I sign in?</a></b><br/><br/>
-			<b><a href="#qa6">How do I change my password?</a></b><br/><br/>
+			<a href="#qa5">How do I sign in?</a><br/>
+			<a href="#qa6">How do I change my password?</a><br/><br/>
 			
 			<h4 class="subheading">Search Questions</h4>
-			<b><a href="#qa7">What criteria can I use to search for a class?</a></b><br/><br/>
-			<b><a href="#qa8">How do I search for a class?</a></b><br/><br/>
+			<a href="#qa7">What criteria can I use to search for a class?</a><br/>
+			<a href="#qa8">How do I search for a class?</a><br/><br/>
 			
 			<h4 class="subheading">Program of Study Questions</h4>
-			<b><a href="#qa9">What is a program of study?</a></b><br/><br/>
+			<a href="#qa9">What is a program of study?</a><br/><br/>
 			
 			<h4 class="subheading">Review Questions</h4>
-			<b><a href="#qa10">How do I post a review?</a></b><br/><br/>
-			<b><a href="#qa11">Are the reviews filtered?</a></b><br/><br/>
-			<b><a href="#qa12">Am I allowed to write a negative review?</a></b><br/><br/>
-			<b><a href="#qa13">Can teachers comment on the reviews?</a></b><br/><br/>
-			<b><a href="#qa14">Can I make an anonymous review?</a></b><br/><br/>
-			<b><a href="#qa15">Can I write a review if I am not a student?</a></b><br/><br/>
+			<a href="#qa10">How do I post a review?</a><br/>
+			<a href="#qa11">Are the reviews filtered?</a><br/>
+			<a href="#qa12">Am I allowed to write a negative review?</a><br/>
+			<a href="#qa13">Can teachers comment on the reviews?</a><br/>
+			<a href="#qa14">Can I make an anonymous review?</a><br/>
+			<a href="#qa15">Can I write a review if I am not a student?</a><br/>
 		</p>
 		<br /> <br />
-		<h3>Questions and Answers</h3><br/><br/>
+</div>
+<div id="rightDiv" class="ui-widget-content ui-corner-all ui-helper-reset">
 		<a name="qa1"></a><b>What is Schedu-elp?</b><br/><br/>
 		<p>Schedu-elp is a tool created to help Santa Clara University graduate students research and review classes they plan on 
 			taking and have taken, respectively.  Looking through a college course catalog can be time consuming, especially for 
@@ -58,7 +58,7 @@
 			If you would like to change your password, you would have to change your Novell password.  You can do this on Ecampus, under 
 			Personal Portfolio > SCU Electronic Information, the same place you go to find your Novell password.</p><br/>
 		<a name="qa7"></a><b>What criteria can I use to search for a class?</b><br/><br/>
-		<p>You can search for a class with a number of different criteria.  The options available are:
+		You can search for a class with a number of different criteria.  The options available are:
 			<ul>
 				<li>Course Code</li>
 				<li>Course Name</li>
@@ -85,7 +85,7 @@
 						<li>Science, Technology, Society (STS) Minor</li>
 					</ul>
 			</ul>
-		</p><br/>
+		<br/>
 		<a name="qa8"></a><b>How do I search for a class?</b><br/><br/>
 		<p></p><br/>
 		<a name="qa9"></a><b>What is a program of study?</b><br/><br/>
@@ -93,15 +93,16 @@
 		<a name="qa10"></a><b>How do I post a review?</b><br/><br/>
 		<p></p><br/>
 		<a name="qa11"></a><b>Are the reviews filtered?</b><br/><br/>
-		<p></p><br/>
+		<p>No.  The reviews are not filtered, so please keep all reviews professional.</p><br/>
 		<a name="qa12"></a><b>Am I allowed to write a negative review?</b><br/><br/>
 		<p>Yes.  All reviews, whether they are positive or negative, are allowed.</p><br/>
 		<a name="qa13"></a><b>Can teachers comment on the reviews?</b><br/><br/>
-		<p></p><br/>
+		<p>No.  Teachers cannot comment on the reviews.  But they can view the reviews.  </p><br/>
 		<a name="qa14"></a><b>Can I make an anonymous review?</b><br/><br/>
-		<p>Yes.</p><br/>
+		<p>No.  You must be signed in to make a review, so your student ID will appear at the end of your review.</p><br/>
 		<a name="qa15"></a><b>Can I write a review if I am not a student?</b><br/><br/>
-		<p></p><br/>
+		<p>No.  You must be a registered student with a student ID to write a review.  But if you are not a student, you can still 
+		view the reviews.</p><br/>
 		<br />
-	</div>
+</div>
 </form>
