@@ -40,7 +40,7 @@ a.tiny:hover {
 }
 
 .subheading {
-	color: #0f5a57;
+	color: #003399;
 	font-weight: bold;
 }
 
@@ -123,15 +123,17 @@ form hr {
 
 /** styles for home page **/
 #home h3 {
-	color: #668b18;
+	color: #657A7A;
 }
 
 #home h5 {
 	color: #914055;
 }
 
+/** styles for home pages **/
+
 div#firstDiv {
-	width: 55%;
+	width: 65%;
 	font-size: 14pt;
 	padding: 0px 7px;
 	float: left;
@@ -139,14 +141,16 @@ div#firstDiv {
 
 
 div#secondDiv {
-	width: 25%;
-	padding: 0px 5px;
+	width: 15%;
+	padding: 0px 6px;
+	border: 1px dashed #93191b;
 	float: right;
 }
+
 #venndiag {
 	margin-left: 25px;
-	height: 250px;
-	width: 250px;
+	height: 400px;
+	width: 500px;
 }
 
 /** styles for sign in page**/
