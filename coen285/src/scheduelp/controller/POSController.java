@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import scheduelp.common.ScheduelpException;
-import scheduelp.dto.ProgramOfStudyTO;
+import scheduelp.dto.ProgramOfStudiesTO;
 import scheduelp.dto.UserSessionTO;
 import scheduelp.service.POSService;
 
@@ -27,9 +27,10 @@ public class POSController extends BaseController {
 	public @ResponseBody
 	String addCourse(@ModelAttribute("userDetail") UserSessionTO userDetail,
 			@RequestParam("cid") String courseCode, Model model) throws ScheduelpException {
-		posService.addCourse(userDetail.getUserID(), userDetail.getDegree(), courseCode);
+		throw new ScheduelpException("To be done");
 
-		return courseCode.concat(" has been added to your Program of Study");
+//		posService.addCourse(userDetail.getUserID(), userDetail.getDegree(), courseCode);
+//		return courseCode.concat(" has been added to your Program of Studies");
 	}
 
 	@RequestMapping(value = "/pos/remove", method = RequestMethod.POST)
@@ -41,11 +42,12 @@ public class POSController extends BaseController {
 	}
 
 	@RequestMapping(value = "/pos", method = RequestMethod.GET)
-	public String getProgramOfStudy(@ModelAttribute("userDetail") UserSessionTO userDetail,
+	public String getProgramOfStudies(@ModelAttribute("userDetail") UserSessionTO userDetail,
 			Model model) throws ScheduelpException {
-		ProgramOfStudyTO dto = posService.getProgramOfStudy(userDetail.getUserID(), userDetail.getDegree());
+		ProgramOfStudiesTO dto = posService.getProgramOfStudies(userDetail.getUserID(),
+				userDetail.getDegree());
 		model.addAttribute("posTo", dto);
-		
+
 		return "viewpos";
 	}
 }

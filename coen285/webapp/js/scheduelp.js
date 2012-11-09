@@ -46,7 +46,7 @@ $(function() {
 		return false;
 	});
 
-	// searchcourse.jsp
+	// search course
 	$("#srchCourseForm").live("submit", function() {
 		// create an AJAX call
 		$.ajax({
@@ -67,7 +67,7 @@ $(function() {
 		// prevent default submit
 		return false;
 	});
-	
+
 	// show all reviews for selected course
 	$(".reviewBtn").live("click", function() {
 		var courseCode = $(this).attr("id").substring(9);
@@ -80,13 +80,13 @@ $(function() {
 			success : function(response) {
 				// update the tab content
 				$(".ui-tabs-panel:visible").html(response);
-			}	
+			}
 		});
 
 		// prevent default submit
 		return false;
 	});
-	
+
 	// write new review
 	$("#viewReviewForm").live("submit", function() {
 		var cid = $("#viewReviewForm #courseId").val();
@@ -98,29 +98,29 @@ $(function() {
 			url : $(this).attr("action"),
 			success : function(response) {
 				// new review dialog
-				$("#newReviewDialog").html(response);								
-				$("#newReviewDialog").dialog("open");											
+				$("#newReviewDialog").html(response);
+				$("#newReviewDialog").dialog("open");
 			},
 			error : function(xhr, status, error) {
 				$(".scheduelpInfo").html(xhr.responseText);
 				$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Write a Review");
 				$(".scheduelpInfo").dialog("open");
-			}			
+			}
 		});
 
 		// prevent default submit
 		return false;
-	});	
-	
+	});
+
 	// add or remove selected course
 	$(".addBtn").live("click", function() {
 		var courseCode = $(this).attr("id").substring(6);
 		var urrl = '/scheduelp/view/pos/remove';
-		
-		var btnIcon = $(this).find('.ui-icon');	
+
+		var btnIcon = $(this).find('.ui-icon');
 		if (btnIcon.hasClass('ui-icon-plusthick')) {
 			urrl = '/scheduelp/view/pos/add';
-		} 
+		}
 		$.ajax({
 			data : {
 				cid : courseCode,
@@ -131,19 +131,19 @@ $(function() {
 				btnIcon.toggleClass('ui-icon-plusthick ui-icon-minusthick')
 				// display success message
 				$(".scheduelpInfo").html(response);
-				$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Program of Study");
+				$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Program of Studies");
 				$(".scheduelpInfo").dialog("open");
 			},
 			error : function(xhr, status, error) {
 				$(".scheduelpInfo").html(xhr.responseText);
-				$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Program of Study");
+				$(".scheduelpInfo").dialog("option", "title", "Schedu-elp - Program of Studies");
 				$(".scheduelpInfo").dialog("open");
-			}			
+			}
 		});
 
 		// prevent default submit
 		return false;
-	});	
+	});
 
 });
 
@@ -151,7 +151,7 @@ $(function() {
 function startup() {
 	// create tabs
 	$("#menu").tabs();
-
+	
 	// load sign in page
 	$("#signin").button({
 		icons : {
@@ -160,13 +160,13 @@ function startup() {
 	});
 	// show signin dialog on startup
 	$("#loginbox").load("/scheduelp/view/showlogin");
-	
 	// submit signin
 	$("#signin").click(function() {
 		$("#loginbox").slideToggle("medium");
 		$("#loginError").hide();
 		$("#loginbox :input").removeClass("ui-state-error");
 	});
+	
 	// information dialog used across app
 	$(".scheduelpInfo").dialog({
 		autoOpen : false,
@@ -179,7 +179,7 @@ function startup() {
 			}
 		}
 	});
-
+	
 	// new review dialog
 	$("#newReviewDialog").dialog({
 		autoOpen : false,
@@ -212,7 +212,7 @@ function startup() {
 				$(this).dialog("close");
 			}
 		}
-	});			
+	});
 }
 
 // initialize all elements on the visible form using jquery ui theme
@@ -223,8 +223,8 @@ function init() {
 		ampm : true,
 		hourMin : 7,
 		hourMax : 22,
-		showMinute: false
-	});	
+		showMinute : false
+	});
 }
 
 // validate signin
@@ -242,8 +242,7 @@ function validateLogin() {
 // validate course search
 function validateSrchCourse(errorObj) {
 	var checked = $('#srchCourseForm input[type="checkbox"]').is(':checked');
-	if ((!checked) && (isEmpty($("#srchCourseForm #startTime")) || isEmpty($("#srchCourseForm #endTime")))
-		&& isEmpty($("#srchCourseForm #courseCode")) && isEmpty($("#srchCourseForm #courseName"))) {
+	if ((!checked) && (isEmpty($("#srchCourseForm #startTime")) || isEmpty($("#srchCourseForm #endTime"))) && isEmpty($("#srchCourseForm #courseCode")) && isEmpty($("#srchCourseForm #courseName"))) {
 		showError(errorObj, "Please enter a search criteria to search for courses");
 		return false;
 	}

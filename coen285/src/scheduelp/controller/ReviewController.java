@@ -31,7 +31,6 @@ public class ReviewController extends BaseController {
 		model.addAttribute("reviewTo", dto);
 		return "viewreview";
 	}
-
 	
 	@RequestMapping(value = "/review/new", method = RequestMethod.GET)
 	public String getNewReview(@ModelAttribute("userDetail") UserSessionTO userDetail,
@@ -48,10 +47,10 @@ public class ReviewController extends BaseController {
 			@ModelAttribute("reviewDetailTo") Review review, Model model)
 			throws ScheduelpException {
 		review.setStudent(userDetail.getUserID());
-		reviewService.postReview(review);
+//		reviewService.postReview(review);
 		String courseCode = review.getCourse();
 
 		return "redirect:/view/review/list?cid=".concat(courseCode);
 	}
-	
+
 }

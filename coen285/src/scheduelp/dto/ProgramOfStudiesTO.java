@@ -6,7 +6,7 @@ import java.util.List;
 import scheduelp.model.PlannedCourse;
 import scheduelp.model.SpecialRequirement;
 
-public class ProgramOfStudyTO {
+public class ProgramOfStudiesTO {
 
 	private Integer plannedUnits;
 

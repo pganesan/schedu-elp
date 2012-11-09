@@ -1,6 +1,5 @@
 package scheduelp.service;
 
-
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -28,17 +27,12 @@ public class ReviewService {
 		for (Course c : courses) {
 			courseDetail.setCourseDetail(c);
 		}
-		
+
 		// get all reviews for the course
 		List<Review> reviews = scheduelpDAO.getReviews(courseCode);
 		courseDetail.setReviews(reviews);
-		
+
 		return courseDetail;
 	}
 
-	@Transactional
-	public void postReview(Review review) {
-		// insert new review
-		scheduelpDAO.insertReview(review);
-	}
 }

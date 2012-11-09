@@ -11,7 +11,6 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -111,32 +110,12 @@ public class ScheduelpDAO {
 		return jdbcTemplate.query(sql, parameters, new ReviewMapper());
 	}
 
-	public void insertReview(Review review) {
-		String sql = "INSERT INTO course_review(course_code,student_id,rating,comments,review_datetime) "
-				+ "VALUES(:course,:student,:rating,:comments,now())";
-
-		SqlParameterSource parameters = new BeanPropertySqlParameterSource(review);
-		jdbcTemplate.update(sql, parameters);
-	}
-
-	public void addCourseToProgram(String userID, String degree, String courseCode) {
-		String sql = "INSERT INTO program_of_study(student_id, course_code) "
-				+ "VALUES (:studentID,:courseCode)";
-
-		Map<String, Object> paramMap = new HashMap<String, Object>();
-		paramMap.put("studentID", userID);
-		paramMap.put("courseCode", courseCode);
-
-		SqlParameterSource parameters = new MapSqlParameterSource(paramMap);
-		jdbcTemplate.update(sql, parameters);
-	}
-
 	public List<PlannedCourse> getPlannedCourses(String userID, String degree) {
 		String sql = "SELECT p.course_code, "
 				+ "c.course_name, c.units, "
 				+ "COALESCE(cr.special_requirement,999999) AS special_requirement, "
 				+ "IFNULL(r.requirement_desc,'Electives') AS requirement_desc, r.units AS reqt_units "
-				+ "FROM program_of_study p "
+				+ "FROM program_of_studies p "
 				+ "INNER JOIN course c ON p.course_code = c.course_code "
 				+ "LEFT JOIN course_spec_reqt cr ON (p.course_code = cr.course_code AND (cr.degree = :degree OR cr.degree IS NULL)) "
 				+ "LEFT JOIN special_requirement r ON cr.special_requirement = r.requirement_id "

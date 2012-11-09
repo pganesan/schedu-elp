@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import scheduelp.dao.ScheduelpDAO;
-import scheduelp.dto.ProgramOfStudyTO;
+import scheduelp.dto.ProgramOfStudiesTO;
 import scheduelp.model.PlannedCourse;
 import scheduelp.model.SpecialRequirement;
 
@@ -21,12 +21,7 @@ public class POSService {
 	private ScheduelpDAO scheduelpDAO;
 
 	@Transactional
-	public void addCourse(String userID, String degree, String courseCode) {
-		scheduelpDAO.addCourseToProgram(userID, degree, courseCode);
-	}
-
-	@Transactional
-	public ProgramOfStudyTO getProgramOfStudy(String userID, String degree) {
+	public ProgramOfStudiesTO getProgramOfStudies(String userID, String degree) {
 		List<PlannedCourse> courses = scheduelpDAO.getPlannedCourses(userID, degree);
 
 		// group courses by special requirement
@@ -44,7 +39,7 @@ public class POSService {
 			}
 			courseGroup.add(course);
 		}
-		ProgramOfStudyTO posTo = new ProgramOfStudyTO();
+		ProgramOfStudiesTO posTo = new ProgramOfStudiesTO();
 		posTo.setProgramMap(programMap);
 		posTo.setPlannedUnits(totalUnits);
 		posTo.setPercentComplete(Math.round((totalUnits / 45) * 100));

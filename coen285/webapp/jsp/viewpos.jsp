@@ -7,7 +7,7 @@
 <form:form modelAttribute="posTo" action="${submitURL}" method="get" id="viewPOSForm"
 	name="viewPOSForm">
 	<div id="leftDiv" class="ui-widget-content ui-corner-all ui-helper-reset">
-		<h3 class="ui-widget-header ui-corner-all ui-helper-reset">Program Of Study</h3>
+		<h3 class="ui-widget-header ui-corner-all ui-helper-reset">Program Of Studies</h3>
 		<table border="0" summary="search" width="100%" cellspacing="10px">
 			<tr>
 				<td class="subheading">${reviewTo.courseCode}&nbsp;-&nbsp;${reviewTo.courseName} <form:hidden
