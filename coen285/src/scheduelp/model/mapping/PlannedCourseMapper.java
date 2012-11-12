@@ -16,10 +16,12 @@ public class PlannedCourseMapper implements RowMapper<PlannedCourse> {
 		course.setCourseCode(rs.getString("course_code"));
 		course.setCourseName(rs.getString("course_name"));
 		course.setUnits(rs.getInt("units"));
+		
 		SpecialRequirement specReqt = new SpecialRequirement();
 		specReqt.setRequirementID(rs.getInt("special_requirement"));
 		specReqt.setRequirementDesc(rs.getString("requirement_desc"));
 		specReqt.setReqtUnits(rs.getInt("reqt_units"));
+		course.setSpecialRequirement(specReqt);
 		
 		return course;
 	}

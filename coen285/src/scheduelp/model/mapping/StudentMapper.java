@@ -16,9 +16,10 @@ public class StudentMapper implements RowMapper<Student> {
 		student.setStudentID(rs.getString("student_id"));
 		student.setFirstName(rs.getString("first_name"));
 		student.setMiddleName(rs.getString("middle_name"));
-		student.setLastName(rs.getString("last_name"));
-		student.setDegree(rs.getString("degree"));
+		student.setLastName(rs.getString("last_name"));		
 		student.setEmail(rs.getString("email"));
+		student.setDegree(rs.getString("degree"));
+		student.setDegreeDesc(rs.getString("degree_name"));
 		
 		return student;
 	}

@@ -46,7 +46,7 @@
 						<a href="${courseSearch}">Course Search</a>
 					</li>
 					<li>
-						<a href="${home}">My Program of Studies</a>
+						<a href="${pos}">My Program of Studies</a>
 					</li>	
 					<li>
 						<a href="${faq}">FAQ</a>

@@ -42,7 +42,7 @@ public class POSService {
 		ProgramOfStudiesTO posTo = new ProgramOfStudiesTO();
 		posTo.setProgramMap(programMap);
 		posTo.setPlannedUnits(totalUnits);
-		posTo.setPercentComplete(Math.round((totalUnits / 45) * 100));
+		posTo.setPercentComplete(Math.round((totalUnits / 45.0f) * 100));
 		
 		return posTo;
 	}

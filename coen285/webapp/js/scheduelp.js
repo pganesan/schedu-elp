@@ -144,7 +144,7 @@ $(function() {
 		// prevent default submit
 		return false;
 	});
-
+	
 });
 
 // things to do on document load
@@ -225,6 +225,14 @@ function init() {
 		hourMax : 22,
 		showMinute : false
 	});
+	$("#viewPOSForm > #rightDiv").accordion({
+		collapsible : true,
+		autoHeight : false,
+		icons: {
+            header: "ui-icon-circle-arrow-e",
+            headerSelected: "ui-icon-circle-arrow-s"
+        }
+	});	
 }
 
 // validate signin

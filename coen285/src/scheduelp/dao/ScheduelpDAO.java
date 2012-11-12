@@ -41,7 +41,9 @@ public class ScheduelpDAO {
 	public Student getStudentRecord(String userID, String pwd) {
 		Student student = null;
 
-		String sql = "SELECT student_id, first_name, middle_name, last_name, degree, email FROM student "
+		String sql = "SELECT s.student_id, s.first_name, s.middle_name, s.last_name, s.email "
+				+ ", s.degree, d.degree_name FROM student s "
+				+ "INNER JOIN degree_program d ON s.degree = d.degree_code "
 				+ "WHERE student_id=:userID AND student_pwd=:pwd";
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("userID", userID);

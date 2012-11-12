@@ -46,7 +46,7 @@ public class SpecialRequirement implements Serializable {
 		boolean eq = false;
 
 		if (obj instanceof SpecialRequirement) {
-			if (requirementID == ((SpecialRequirement) obj).getRequirementID()) {
+			if (requirementID.equals(((SpecialRequirement) obj).getRequirementID())) {
 				eq = true;
 			}
 		}

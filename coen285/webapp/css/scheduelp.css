@@ -76,8 +76,6 @@ p.ui-state-highlight {
 	height: 65px;
 }
 
-
-
 .title {
 	font-size: 30pt;
 	width: 50%;
@@ -121,56 +119,6 @@ form hr {
 	color: #93191b;
 }
 
-/** styles for home page **/
-#home h3 {
-	color: #657A7A;
-}
-
-#home h5 {
-	color: #914055;
-}
-
-/** styles for home pages **/
-
-div#firstDiv {
-	width: 65%;
-	font-size: 14pt;
-	padding: 0px 7px;
-	float: left;
-}
-
-
-div#secondDiv {
-	width: 15%;
-	padding: 0px 6px;
-	border: 1px dashed #93191b;
-	float: right;
-}
-
-#venndiag {
-	margin-left: 25px;
-	height: 400px;
-	width: 500px;
-}
-
-/** styles for sign in page**/
-#loginbox {
-	position: absolute;
-	right: 5%;
-	width: 220px;
-	height: 180px;
-	border: 1px solid #93191b;
-	z-index: 2;
-	padding: 10px;
-}
-
-legend {
-	margin: 10px;
-	font-weight: bold;
-	color: #668b18;
-}
-
-/** styles for reservation pages **/
 #leftDiv {
 	width: 30%;
 	float: left;
@@ -191,6 +139,46 @@ legend {
 #leftDiv > h3 {
 	padding: 5px;
 	text-align: center;
+}
+
+/** styles for home page **/
+#home h3 {
+	color: #657A7A;
+}
+
+#home h5 {
+	color: #914055;
+}
+
+div#firstDiv {
+	width: 65%;
+	font-size: 14pt;
+	padding: 0px 7px;
+	float: left;
+}
+
+div#secondDiv {
+	width: 15%;
+	padding: 0px 6px;
+	border: 1px dashed #93191b;
+	float: right;
+}
+
+#venndiag {
+	margin-left: 25px;
+	height: 400px;
+	width: 500px;
+}
+
+/** styles for sign in page **/
+#loginbox {
+	position: absolute;
+	right: 5%;
+	width: 220px;
+	height: 180px;
+	border: 1px solid #93191b;
+	z-index: 2;
+	padding: 10px;
 }
 
 /** styles for faq page **/

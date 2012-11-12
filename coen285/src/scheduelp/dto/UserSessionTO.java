@@ -14,9 +14,11 @@ public class UserSessionTO {
 
 	private String lastName;
 
-	private String degree;
-
 	private String email;
+	
+	private String degree;
+	
+	private String degreeDesc;
 
 	public String getUserID() {
 		return userID;
@@ -58,14 +60,6 @@ public class UserSessionTO {
 		this.lastName = lastName;
 	}
 
-	public String getDegree() {
-		return degree;
-	}
-
-	public void setDegree(String degree) {
-		this.degree = degree;
-	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -74,16 +68,33 @@ public class UserSessionTO {
 		return email;
 	}
 
+	public String getDegree() {
+		return degree;
+	}
+
+	public void setDegree(String degree) {
+		this.degree = degree;
+	}
+	
+	public String getDegreeDesc() {
+		return degreeDesc;
+	}
+
+	public void setDegreeDesc(String degreeDesc) {
+		this.degreeDesc = degreeDesc;
+	}
+	
 	public static UserSessionTO createUser(Student student) {
 		UserSessionTO user = new UserSessionTO();
 
 		user.setUserID(student.getStudentID());
 		user.setFirstName(student.getFirstName());
 		user.setMiddleName(student.getMiddleName());
-		user.setLastName(student.getLastName());
-		user.setDegree(student.getDegree());
+		user.setLastName(student.getLastName());		
 		user.setEmail(student.getEmail());
-
+		user.setDegree(student.getDegree());
+		user.setDegreeDesc(student.getDegreeDesc());
+		
 		return user;
 	}
 

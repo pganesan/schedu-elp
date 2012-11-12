@@ -10,78 +10,81 @@
 		<h3 class="ui-widget-header ui-corner-all ui-helper-reset">Program Of Studies</h3>
 		<table border="0" summary="search" width="100%" cellspacing="10px">
 			<tr>
-				<td class="subheading">${reviewTo.courseCode}&nbsp;-&nbsp;${reviewTo.courseName} <form:hidden
-						path="courseCode" id="courseId" />
+				<td><span class="subheading">NAME (Last, First, M.I.):&nbsp;</span>
+				${userDetail.lastName},&nbsp;${userDetail.firstName},&nbsp;${userDetail.middleName}
 				</td>
 			</tr>
 			<tr>
-				<td>${reviewTo.courseDesc}<br />
-				<c:choose>
-					<c:when test="${fn:startsWith(reviewTo.courseCode,'COEN')}">
-						<a class="tiny" href="http://www.scu.edu/academics/bulletins/engineering/coengrad.cfm" target="_blank">Read more...</a>
-					</c:when> 
-					<c:when test="${fn:contains(reviewTo.courseCode,'MGT')}">
-						<a class="tiny" href="http://www.scu.edu/academics/bulletins/engineering/emgt.cfm" target="_blank">Read more...</a>
-					</c:when> 
-					<c:when test="${fn:startsWith(reviewTo.courseCode,'ENGR')}">
-						<a class="tiny" href="http://www.scu.edu/academics/bulletins/engineering/engr.cfm"
-							target="_blank">Read more...</a>
-					</c:when> 
-					<c:when test="${fn:startsWith(reviewTo.courseCode,'AMTH')}">
-						<a class="tiny" href="http://www.scu.edu/academics/bulletins/engineering/amth.cfm"
-							target="_blank">Read more...</a>
-					</c:when> 					
-					<c:otherwise>
-						<a class="tiny" href="http://www.scu.edu/academics/bulletins/engineering/" target="_blank">Read
-							more...</a>
-					</c:otherwise>
-				</c:choose>
+				<td><span class="subheading">STUDENT ID:&nbsp;</span>${userDetail.userID}
 				</td>
 			</tr>
 			<tr>
-				<td><span class="subheading">CREDIT: </span>${reviewTo.units}&nbsp;units</td>
-			</tr>
-			<tr>
-				<td><span class="subheading">PREREQS: </span><br /> <c:forEach
-						items="${reviewTo.prerequisites}" var="pre">
-						${pre}&nbsp;&nbsp;
-					</c:forEach>
-				</td>
-			</tr>
-			<tr>
-				<td><span class="subheading">COURSE TIMINGS: </span><br /> <c:forEach
-						items="${reviewTo.schedules}" var="sch">
-						${sch.quarter}:&nbsp;${sch.dayOfWeek}&nbsp;${sch.startTime}-${sch.endTime}<br />
-					</c:forEach>
+				<td><span class="subheading">EMAIL ADDRESS:&nbsp;</span>${userDetail.email}
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
+				<td><span class="subheading">DEGREE PROGRAM:&nbsp;</span><br/>
+				${userDetail.degreeDesc}&nbsp;(${userDetail.degree})
+				</td>
+			</tr>	
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><span class="subheading">TOTAL NUMBER OF PLANNED UNITS:&nbsp;</span>${posTo.plannedUnits}</td>
+			</tr>	
+			<tr>
+				<td><div id="progressbar"></div>&nbsp;<span class="subheading">${posTo.percentComplete}% Planning Complete</span></td>
+			</tr>										
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
 				<td align="center">
-					<button id="newRvBtn" type="submit" name="newRvBtn">
-						<span class="ui-icon ui-icon-comment"></span>Write a review
+					<button id="printBtn" type="submit" name="printBtn">
+						<span class="ui-icon ui-icon-print"></span>Print
 					</button>
 				</td>
 			</tr>
 		</table>
 	</div>
-	<c:if test="${!empty reviewTo.reviews}">
-		<div id="rightDiv" class="ui-widget-content ui-corner-all ui-helper-reset">
-			<table border="0" summary="review" width="100%" cellspacing="10px">
-				<c:forEach items="${reviewTo.reviews}" var="rv">
-					<tr>
-						<td><c:forEach begin="1" end="${rv.rating}">
-								<img src='../images/star.png' alt='star' />&nbsp;
-						</c:forEach> Reviewed on <span class='subheading'>${rv.reviewDateTime}</span> by <span class='subheading'>${rv.student}</span>
-							<br /> <br /> ${rv.comments}</td>
-					</tr>
-					<tr>
-						<td><hr /></td>
-					</tr>
-				</c:forEach>
-			</table>
+	<c:if test="${!empty posTo.programMap}">
+		<div id="rightDiv">
+			<c:forEach var="category" items="${posTo.programMap}">
+				<h3>
+					<a href="#">${category.key.requirementDesc}
+					<c:if test="${category.key.reqtUnits != 0}">
+						&nbsp;(${category.key.reqtUnits}&nbsp;units)
+					</c:if>
+					</a>
+				</h3>
+				<div>
+					<table border="0" summary="courseList" width="95%" cellspacing="10px">
+						<tr>
+							<td class="subheading">COURSE NUMBER</td>
+							<td class="subheading">COURSE TITLE</td>
+							<td class="subheading">UNITS</td>
+						</tr>
+						<c:forEach items="${category.value}" var="course">
+							<tr>
+								<td width="25%">${course.courseCode}</td>
+								<td width="50%">${course.courseName}</td>
+								<td width="25%">${course.units}</td>
+							</tr>							
+						</c:forEach>
+					</table>
+				</div>
+			</c:forEach>
 		</div>
 	</c:if>
 </form:form>
+<script>
+	var percentComplete = '<c:out value="${posTo.percentComplete}"/>'; 
+	$("#progressbar").progressbar({
+    	value: parseInt(percentComplete)
+	});
+
+</script>
