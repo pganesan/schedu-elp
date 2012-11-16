@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -112,6 +113,14 @@ public class ScheduelpDAO {
 		return jdbcTemplate.query(sql, parameters, new ReviewMapper());
 	}
 
+	public void insertReview(Review review) {
+		String sql = "INSERT INTO course_review(course_code,student_id,rating,comments,review_datetime) "
+				+ "VALUES(:course,:student,:rating,:comments,now())";
+
+		SqlParameterSource parameters = new BeanPropertySqlParameterSource(review);
+		jdbcTemplate.update(sql, parameters);
+	}	
+	
 	public List<PlannedCourse> getPlannedCourses(String userID, String degree) {
 		String sql = "SELECT p.course_code, "
 				+ "c.course_name, c.units, "

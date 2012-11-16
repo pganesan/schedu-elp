@@ -47,7 +47,7 @@ public class ReviewController extends BaseController {
 			@ModelAttribute("reviewDetailTo") Review review, Model model)
 			throws ScheduelpException {
 		review.setStudent(userDetail.getUserID());
-//		reviewService.postReview(review);
+		reviewService.postReview(review);
 		String courseCode = review.getCourse();
 
 		return "redirect:/view/review/list?cid=".concat(courseCode);

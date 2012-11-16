@@ -35,4 +35,9 @@ public class ReviewService {
 		return courseDetail;
 	}
 
+	@Transactional
+	public void postReview(Review review) {
+		// insert new review
+		scheduelpDAO.insertReview(review);
+	}
 }

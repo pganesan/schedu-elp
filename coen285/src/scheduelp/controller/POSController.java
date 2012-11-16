@@ -29,7 +29,7 @@ public class POSController extends BaseController {
 			@RequestParam("cid") String courseCode, Model model) throws ScheduelpException {
 		throw new ScheduelpException("To be done");
 
-//		posService.addCourse(userDetail.getUserID(), userDetail.getDegree(), courseCode);
+//		posService.addCourse(userDetail.getUserID(), courseCode);
 //		return courseCode.concat(" has been added to your Program of Studies");
 	}
 
