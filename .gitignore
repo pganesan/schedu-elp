@@ -1,10 +1,18 @@
+#Project files
 *.classpath
 *.project
 META-INF
+
+#Binary files
 *.jar
 *.war
 *.ear
 *.class
+
+#Build files
 *.bat
 .metadata
-coen285/webapp/WEB-INF/applicationContext.xml
+*.xml
+
+# Office Temp Files
+~$*
