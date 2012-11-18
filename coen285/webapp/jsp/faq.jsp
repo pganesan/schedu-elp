@@ -87,7 +87,10 @@
 		<a name="qa9"></a><b>What is a program of study?</b><br/><br/>
 		<p>A program of study is the list of classes that you have taken or plan on taking to complete your degree.</p><br/>
 		<a name="qa10"></a><b>How do I post a review?</b><br/><br/>
-		<p>To post a review, </p><br/>
+		<p>Once you perform a search, click on the "Read Review" button and that will take you to the course specifics and other reviews for
+		that class.  Next click on the "Write Review" button.  The Write Review dialog box will pop up.  Key in your review in the comments
+		box and choose a rating.  Finally, click on the "Post Review" button, and your review, with your name will appear below the rest of
+		the comments.</p><br/>
 		<a name="qa11"></a><b>Are the reviews filtered?</b><br/><br/>
 		<p>No.  The reviews are not filtered, so please keep all reviews professional.</p><br/>
 		<a name="qa12"></a><b>Am I allowed to write a negative review?</b><br/><br/>

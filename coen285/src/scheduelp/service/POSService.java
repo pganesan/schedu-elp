@@ -47,4 +47,10 @@ public class POSService {
 		return posTo;
 	}
 
+	@Transactional
+    public void addCourse(String userID, String courseCode) {
+		// insert course
+		scheduelpDAO.insertCourse(userID, courseCode);
+	}
+
 }

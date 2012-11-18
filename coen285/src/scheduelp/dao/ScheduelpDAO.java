@@ -139,6 +139,18 @@ public class ScheduelpDAO {
 
 		return jdbcTemplate.query(sql, parameters, new PlannedCourseMapper());
 	}
+	
+	public void insertCourse(String student_id, String course_code) {
+		String sql = "INSERT INTO program_of_studies(student_id, course_code) "
+				+ "VALUES(:studentID,:courseCode)";
+
+		Map<String, Object> paramMap = new HashMap <String, Object>();
+		paramMap.put("studentID", student_id);
+		paramMap.put("courseCode", course_code);
+		
+		SqlParameterSource parameters = new MapSqlParameterSource(paramMap);
+		jdbcTemplate.update(sql, parameters);
+	}
 
 	// sample insert
 	/*
