@@ -27,8 +27,7 @@ public class POSController extends BaseController {
 	public @ResponseBody
 	String addCourse(@ModelAttribute("userDetail") UserSessionTO userDetail,
 			@RequestParam("cid") String courseCode, Model model) throws ScheduelpException {
-		throw new ScheduelpException("Still not working");
-
+		
 		posService.addCourse(userDetail.getUserID(), courseCode);
 		return courseCode.concat(" has been added to your Program of Studies");
 	}
