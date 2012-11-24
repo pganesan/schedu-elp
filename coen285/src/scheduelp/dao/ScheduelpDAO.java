@@ -119,8 +119,8 @@ public class ScheduelpDAO {
 
 		SqlParameterSource parameters = new BeanPropertySqlParameterSource(review);
 		jdbcTemplate.update(sql, parameters);
-	}	
-	
+	}
+
 	public List<PlannedCourse> getPlannedCourses(String userID, String degree) {
 		String sql = "SELECT p.course_code, "
 				+ "c.course_name, c.units, "
@@ -139,51 +139,17 @@ public class ScheduelpDAO {
 
 		return jdbcTemplate.query(sql, parameters, new PlannedCourseMapper());
 	}
-	
+
 	public void insertCourse(String student_id, String course_code) {
 		String sql = "INSERT INTO program_of_studies(student_id, course_code) "
 				+ "VALUES(:studentID,:courseCode)";
 
-		Map<String, Object> paramMap = new HashMap <String, Object>();
+		Map<String, Object> paramMap = new HashMap<String, Object>();
 		paramMap.put("studentID", student_id);
 		paramMap.put("courseCode", course_code);
-		
+
 		SqlParameterSource parameters = new MapSqlParameterSource(paramMap);
 		jdbcTemplate.update(sql, parameters);
 	}
-
-	// sample insert
-	/*
-	 * public Integer insertReservation(Reservation reservation) { String sql =
-	 * "INSERT INTO reservation(restaurant_id,type_id,user_id,reserve_datetime) "
-	 * +
-	 * "VALUES(:restaurantId, :tableType, :userId, str_to_date(concat(:reserveDate,:reserveTime),'%m/%d/%Y%h:%i %p'))"
-	 * ;
-	 * 
-	 * SqlParameterSource parameters = new
-	 * BeanPropertySqlParameterSource(reservation); KeyHolder keyHolder = new
-	 * GeneratedKeyHolder();
-	 * 
-	 * jdbcTemplate.update(sql, parameters, keyHolder); return
-	 * keyHolder.getKey().intValue(); }
-	 * 
-	 * // sample update public void updateReservation(Reservation reservation) {
-	 * String sql =
-	 * "UPDATE reservation SET reserve_datetime = str_to_date(concat(:reserveDate,:reserveTime),'%m/%d/%Y%h:%i %p'), "
-	 * + "type_id=:tableType WHERE reservation_number = :reservationNumber";
-	 * 
-	 * SqlParameterSource parameters = new
-	 * BeanPropertySqlParameterSource(reservation); jdbcTemplate.update(sql,
-	 * parameters); }
-	 * 
-	 * // sample delete public void deleteReservation(Reservation reservation) {
-	 * String sql =
-	 * "DELETE FROM reservation WHERE reservation_number = :reservationNumber";
-	 * 
-	 * SqlParameterSource parameters = new
-	 * MapSqlParameterSource("reservationNumber",
-	 * reservation.getReservationNumber()); jdbcTemplate.update(sql,
-	 * parameters); }
-	 */
 
 }
