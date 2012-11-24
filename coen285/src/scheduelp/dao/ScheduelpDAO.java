@@ -152,38 +152,4 @@ public class ScheduelpDAO {
 		jdbcTemplate.update(sql, parameters);
 	}
 
-	// sample insert
-	/*
-	 * public Integer insertReservation(Reservation reservation) { String sql =
-	 * "INSERT INTO reservation(restaurant_id,type_id,user_id,reserve_datetime) "
-	 * +
-	 * "VALUES(:restaurantId, :tableType, :userId, str_to_date(concat(:reserveDate,:reserveTime),'%m/%d/%Y%h:%i %p'))"
-	 * ;
-	 * 
-	 * SqlParameterSource parameters = new
-	 * BeanPropertySqlParameterSource(reservation); KeyHolder keyHolder = new
-	 * GeneratedKeyHolder();
-	 * 
-	 * jdbcTemplate.update(sql, parameters, keyHolder); return
-	 * keyHolder.getKey().intValue(); }
-	 * 
-	 * // sample update public void updateReservation(Reservation reservation) {
-	 * String sql =
-	 * "UPDATE reservation SET reserve_datetime = str_to_date(concat(:reserveDate,:reserveTime),'%m/%d/%Y%h:%i %p'), "
-	 * + "type_id=:tableType WHERE reservation_number = :reservationNumber";
-	 * 
-	 * SqlParameterSource parameters = new
-	 * BeanPropertySqlParameterSource(reservation); jdbcTemplate.update(sql,
-	 * parameters); }
-	 * 
-	 * // sample delete public void deleteReservation(Reservation reservation) {
-	 * String sql =
-	 * "DELETE FROM reservation WHERE reservation_number = :reservationNumber";
-	 * 
-	 * SqlParameterSource parameters = new
-	 * MapSqlParameterSource("reservationNumber",
-	 * reservation.getReservationNumber()); jdbcTemplate.update(sql,
-	 * parameters); }
-	 */
-
 }
