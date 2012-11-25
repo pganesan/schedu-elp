@@ -14,17 +14,16 @@
 		<br /> 
 	
 	</div>
-			
-	
 	<div id="secondDiv">
 		<p>
 		<table summary="Venn" width="15%">
 				<tr>
-					<img id=venndiag alt="scheduelplogo" src="../images/scheduelp.jpg" /></td>
+					<td><img id=venndiag alt="scheduelplogo" src="../images/scheduelp.jpg" /></td>
 				</tr>
 			</table>
+			<br/><br/>
 		<h3>Need Help? </h3>
-		<h4 class="subheading">  Check out our detailed FAQ section.  Don't see your question?<br/><br/>Simply contact us at:<br />info@scheduelp.com <br /> (1800) 438-Help.</h4> <br />
+		<h4 class="subheading">  Check out our detailed FAQ section.  Don't see your question?<br/><br/>Simply contact us at:<br />info@scheduelp.com <br /> (1800) 438-Help</h4> <br />
 		</p>
 	</div>
 </form>

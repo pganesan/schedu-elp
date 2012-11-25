@@ -27,7 +27,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td><br /><br /><label for="comments">Comments</label></td>
+			<td><br /><br /><label for="comments">Comments*</label></td>
 		</tr>
 		<tr>
 			<td>
