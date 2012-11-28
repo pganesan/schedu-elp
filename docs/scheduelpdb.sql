@@ -89,7 +89,7 @@ CREATE TABLE `course_review` (
   KEY `course_review_course_code_fk1` (`course_code`),
   CONSTRAINT `course_review_course_code_fk1` FOREIGN KEY (`course_code`) REFERENCES `course` (`course_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `course_review_student_id_fk2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `course_review` (
 
 LOCK TABLES `course_review` WRITE;
 /*!40000 ALTER TABLE `course_review` DISABLE KEYS */;
-INSERT INTO `course_review` VALUES (1,'COEN 210','W9999999',4,'Very interesting class. I initially wanted to waive this course, but I am glad I took it.','2012-10-28 19:04:12'),(2,'COEN 233','W9999999',5,'Great course. Fundamental course that every computer science student must take!','2012-10-28 19:44:02'),(3,'COEN 210','W1111111',5,'Good course. Exams are tricky. But if you understand the concepts well, you will certainly get an A.','2012-10-27 17:45:12'),(4,'COEN 233','W1111111',4,'I thoroughly enjoyed every bit of this course! The Professor is a really busy person, but takes time to answer questions through emails. ','2012-10-29 11:15:49'),(5,'COEN 210','W5555555',4,'I am writing this review on behalf on a friend. Initially, she wanted to waive this course. She was very impressed with the knowledge of the Professor and she is happy she took this course.','2012-11-06 15:52:39');
+INSERT INTO `course_review` VALUES (1,'COEN 210','W9999999',4,'Very interesting class. I initially wanted to waive this course, but I am glad I took it.','2012-10-28 19:04:12'),(2,'COEN 233','W9999999',5,'Great course. Fundamental course that every computer science student must take!','2012-10-28 19:44:02'),(3,'COEN 210','W1111111',5,'Good course. Exams are tricky. But if you understand the concepts well, you will certainly get an A.','2012-10-27 17:45:12'),(4,'COEN 233','W1111111',4,'I thoroughly enjoyed every bit of this course! The Professor is a really busy person, but takes time to answer questions through emails. ','2012-10-29 11:15:49'),(5,'COEN 210','W5555555',4,'I am writing this review on behalf on a friend. Initially, she wanted to waive this course. She was very impressed with the knowledge of the Professor and she is happy she took this course.','2012-11-06 15:52:39'),(6,'COEN 210','W5555555',3,'This class rocks! I was able to use what I learnt and apply it directly to my job','2012-11-24 18:31:47'),(7,'COEN 233','W5555555',4,'I will have to agree with other students, very enjoyable course indeed!','2012-11-27 15:28:03');
 /*!40000 ALTER TABLE `course_review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -147,8 +147,8 @@ CREATE TABLE `course_spec_reqt` (
   KEY `course_spec_reqt_special_reqmt` (`special_requirement`),
   KEY `course_spec_reqt_course_code` (`course_code`),
   KEY `course_spec_reqt_degree` (`degree`),
-  CONSTRAINT `course_spec_reqt_degree` FOREIGN KEY (`degree`) REFERENCES `degree_program` (`degree_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `course_spec_reqt_course_code` FOREIGN KEY (`course_code`) REFERENCES `course` (`course_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `course_spec_reqt_degree` FOREIGN KEY (`degree`) REFERENCES `degree_program` (`degree_code`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `course_spec_reqt_special_reqmt` FOREIGN KEY (`special_requirement`) REFERENCES `special_requirement` (`requirement_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -211,7 +211,7 @@ CREATE TABLE `program_of_studies` (
 
 LOCK TABLES `program_of_studies` WRITE;
 /*!40000 ALTER TABLE `program_of_studies` DISABLE KEYS */;
-INSERT INTO `program_of_studies` VALUES ('W9999999','COEN 233'),('W1111111','COEN 250'),('W9999999','COEN 250'),('W9999999','COEN 275'),('W9999999','COEN 283');
+INSERT INTO `program_of_studies` VALUES ('W9999999','COEN 233'),('W1111111','COEN 250'),('W9999999','COEN 250'),('W9999999','COEN 275'),('W9999999','COEN 283'),('W5555555','COEN 286');
 /*!40000 ALTER TABLE `program_of_studies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -281,4 +281,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-09 10:36:31
+-- Dump completed on 2012-11-28 11:51:34
