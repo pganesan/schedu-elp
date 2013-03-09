@@ -1,24 +1,28 @@
-#Listaurant - Online Restaurant Reservation System
-Developed by Poornima Ganesan
+#Schedu-elp: Online Academic Planner for SCU graduate students
+Team: Poornima Ganesan, Shradha Gavali, Sheila Castillo
 
 #TECHNOLOGIES
 Java, Spring MVC, XHTML, JSP, JSTL, CSS, JS, JQuery, AJAX, MySQL, Design Patterns, Tomcat
 
 #ABOUT THE PROJECT
-Listaurant is an online restaurant reservation system that allows users to search for restaurants 
-in their neighborhood and make dining reservations at their preferred restaurant.
-Following are the usecases supported by listaurant:
-* Home page – provide information about what you can do in Listaurant web app.
-* Make a Reservation – Search for restaurants in a desired location and book a table at the selected restaurant at a specific date/time. 
-* View/Edit Reservations – View open reservations made by the user and edit/cancel existing reservations. 
-* Order a takeout - Search for restaurants in a desired location. Choose a restaurant from search results 
-and view the menu. Select items from menu and order a takeout. Payments can be made through the application for the takeout order.
-* Read/Write Reviews - Search for restaurants in a desired location to view restaurant ratings and reviews. 
-The user can sort/filter ratings. Members can also post their own reviews.
+The Schedu-elp concept was developed out of recognition that there was not an existing online resource 
+to help the working graduate community plan their education. The Schedu-elp tool allows for the users to 
+access course overviews, course reviews, search on a subset of content to aid with planning purposes, and 
+create a Program of Studies which can simply be printed prior to obtaining advisor’s approval, all while 
+adhering to program requirements – streamlining the course curriculum and saving educational expenses. 	
+Following are the user stories supported by Scheduelp:
+* Access Homepage: shows overview of Schedu-elp web app
+* Student sign-in/sign out
+* Course search by course name, course number, course schedule
+* Add course to Program of Studies
+* View/Print Program of Studies
+* View course reviews by SCU students
+* Post a course review so that other students can benefit
+* Online Help/FAQ section
 
-
-# LISTAURANT HIGHLIGHTS
+# SCHEDU-ELP HIGHLIGHTS
 * AJAX requests to load tabbed views.
 * Extensive use of JQuery UI widgets.
-* Reviews/Ratings page modeled similar to Yelp.
-* Efficient use of OO principles and design patterns in Java
+* Reviews/Ratings page modeled similar to Yelp for ease of use by students.
+* Efficient use of OO principles and design patterns in Java.
+* Agile/SCRUM methodology used by team for development.
